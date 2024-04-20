@@ -25,11 +25,19 @@ interface BlocksProps extends AnishBlocksProps {
   interface ItemsProps extends AnishItemsProps {
     id: number;
   }
+
+  export interface RecipeProps {
+    item: string;
+    quantity: number;
+    recipe: string[];
+    shapeless: boolean;
+  }
 const useBlocksAndItems = () =>{
     const [isLoading, setIsLoading] = useState(false);
     const [blocks, setBlocks] = useState<BlocksProps[]>([]);
     const [items, setItems] = useState<ItemsProps[]>([]);
-  
+    const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+
     useEffect(() => {
       const controller = new AbortController();
       const fetchData = async () => {
@@ -59,6 +67,7 @@ const useBlocksAndItems = () =>{
   
         try {
           // Get Anish Blocks
+          setIsLoading(true);
           const anishBlocksResponse = await anishService.getAllBlocks();
   
           // Get PrismarineJS Blocks
@@ -71,6 +80,24 @@ const useBlocksAndItems = () =>{
               minecraftDataBlocksResponse.data
             );
           } else {
+            controller.abort();
+          }
+        } catch (err) {
+          if (err instanceof CanceledError) return; // If the operation was cancelled, no need to handle the error
+          console.error(err);
+        } finally {
+          setIsLoading(false);
+        }
+
+        try {
+          // Get Anish Recipes
+          setIsLoading(true);
+          const anishRecipeResponse = await anishService.getAllRecipes();
+          console.log(anishRecipeResponse);
+          if (anishRecipeResponse.data){
+            setRecipes(anishRecipeResponse.data);
+          }
+          else {
             controller.abort();
           }
         } catch (err) {
@@ -105,7 +132,6 @@ const useBlocksAndItems = () =>{
         }
         return anishItem;
       });
-      console.log(mergedItems);
       setItems(mergedItems as ItemsProps[]);
     };
   
@@ -131,6 +157,7 @@ const useBlocksAndItems = () =>{
       setBlocks(mergedBlocks as BlocksProps[]);
     };
 
-    return {items, blocks, isLoading, setItems, setBlocks, setIsLoading}
+    return {items, blocks, recipes, isLoading, setItems, setBlocks, setRecipes, setIsLoading}
 }
+
 export default useBlocksAndItems;

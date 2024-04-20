@@ -1,3 +1,4 @@
+import { RecipeProps } from "../hooks/useMinecraftHook";
 import ansApiClient from "./ans-api-client";
 
 export interface Colors {
@@ -34,7 +35,10 @@ class AnishService{
         return ansApiClient.get<AnishBlocksProps[]>( "/blocks");
     }
     getAllItems() {
-        return ansApiClient.get<AnishItemsProps[]>("/items",);
+        return ansApiClient.get<AnishItemsProps[]>("/items");
+    }
+    getAllRecipes(){
+        return ansApiClient.get<RecipeProps[]>("/crafting-recipes");
     }
 }
 
