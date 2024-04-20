@@ -24,7 +24,10 @@ const App = () => {
             className="list-group-item d-flex justify-content-between"
           >
             <p>
-              {item.item}: {item.recipe}
+              {item.item}:{" "}
+              {item.recipe
+                .map((ingredient) => (ingredient ? ingredient : "null"))
+                .join(", ")}
             </p>
           </li>
         ))}

@@ -29,7 +29,7 @@ interface BlocksProps extends AnishBlocksProps {
   export interface RecipeProps {
     item: string;
     quantity: number;
-    recipe: string[];
+    recipe: (string | null)[]
     shapeless: boolean;
   }
 const useBlocksAndItems = () =>{
