@@ -1,3 +1,5 @@
+import RecipeComponent from "./components/RecipeComponent";
+import RecipeListGroupComponent from "./components/RecipeListGroupComponent";
 import useBlocksAndItems from "./hooks/useMinecraftHook";
 //This is enough for the items.
 
@@ -15,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <ul className="list-group">
+      {/* <ul className="list-group">
         <li className="list-group-item">Data below</li>
         {isLoading && <div className="spinner-border m-3"></div>}
         {recipes.slice(0, 50).map((item, index) => (
@@ -31,7 +33,8 @@ const App = () => {
             </p>
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <RecipeListGroupComponent recipes={recipes.splice(0, 50)} />
     </div>
   );
 };
