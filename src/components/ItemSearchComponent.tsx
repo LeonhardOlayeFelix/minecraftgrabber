@@ -52,6 +52,7 @@ const ItemSearch = ({ items, className, maxResults }: Props) => {
       <div>
         {matchedItems !== undefined && maxResults && (
           <ItemGridComponent
+            key={new Date().toISOString()}
             items={
               maxResults > matchedItems.length
                 ? matchedItems

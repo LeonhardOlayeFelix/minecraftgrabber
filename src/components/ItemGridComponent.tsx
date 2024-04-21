@@ -17,7 +17,7 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 0 && (
                 <div>
-                  <ItemComponent className="grow" item={item} />
+                  <ItemComponent className="grow green-glow" item={item} />
                 </div>
               )
           )}
@@ -27,7 +27,7 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 1 && (
                 <div>
-                  <ItemComponent className="grow" item={item} />
+                  <ItemComponent className="grow green-glow" item={item} />
                 </div>
               )
           )}
@@ -37,7 +37,7 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 2 && (
                 <div>
-                  <ItemComponent className="grow" item={item} />
+                  <ItemComponent className="grow green-glow" item={item} />
                 </div>
               )
           )}

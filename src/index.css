@@ -10,5 +10,5 @@
   }
   
   .grow {
-    animation: growAnimation 0.5s ease-out forwards; /* Adjust time and easing as needed */
+    animation: growAnimation 0.1s ease-out forwards; /* Adjust time and easing as needed */
   }

@@ -11,8 +11,6 @@ const ItemComponent = ({ item, className }: Props) => {
     <div
       className={"card m-3 " + className}
       style={{
-        borderBottomLeftRadius: "20px",
-        borderBottomRightRadius: "20px",
         width: "18rem",
       }}
     >
