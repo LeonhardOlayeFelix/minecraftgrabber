@@ -22,7 +22,7 @@ interface BlocksProps extends AnishBlocksProps {
     boundingBox: string;
   }
   
-  interface ItemsProps extends AnishItemsProps {
+  export interface ItemsProps extends AnishItemsProps {
     id: number;
   }
 

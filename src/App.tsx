@@ -1,3 +1,5 @@
+import ItemComponent from "./components/ItemComponent";
+import ItemGridComponent from "./components/ItemGridComponent";
 import RecipeComponent from "./components/RecipeComponent";
 import RecipeListGroupComponent from "./components/RecipeGridComponent";
 import useBlocksAndItems from "./hooks/useMinecraftHook";
@@ -34,7 +36,8 @@ const App = () => {
           </li>
         ))}
       </ul> */}
-      <RecipeListGroupComponent recipes={recipes.splice(0, 100)} />
+      {/* <RecipeListGroupComponent recipes={recipes.splice(0, 100)} /> */}
+      <ItemGridComponent items={items.splice(0, 100)} />
     </div>
   );
 };

@@ -1,13 +1,11 @@
 import React from "react";
-import useBlocksAndItems, { RecipeProps } from "../hooks/useMinecraftHook";
-import "./RecipeComponent.css";
+import { ItemsProps } from "../hooks/useMinecraftHook";
+
 interface Props {
-  recipe: RecipeProps;
+  item: ItemsProps;
 }
 
-const RecipeComponent = ({ recipe }: Props) => {
-  const { items } = useBlocksAndItems();
-  const item = items.find((item) => item.name === recipe.item);
+const ItemComponent = ({ item }: Props) => {
   return (
     <div
       className="card m-3"
@@ -43,4 +41,4 @@ const RecipeComponent = ({ recipe }: Props) => {
   );
 };
 
-export default RecipeComponent;
+export default ItemComponent;
