@@ -1,0 +1,48 @@
+body {
+    background-color: #c6c6c6;
+  }
+  
+  .crafting {
+    font-size: 20px;
+    font-weight: bold;
+    color: #404040;
+  }
+  
+  .fa-arrow-right {
+      color: #8b8b8b;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  #grid {
+    width: 120px;
+  }
+  
+  .grid-element {
+    background-color: #8b8b8b;
+    border-top: thick double #373737;
+    border-left: thick double #373737;
+    border-right: double #FFFFFF;
+    border-bottom: double #FFFFFF;
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: flex;  /* Use flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    padding: 0;  /* Remove padding if any */
+    margin: 0;  /* Remove margin if any */
+}
+  
+  .arrow {
+    margin: auto;
+    float: left;
+  }
+  
+  img.displayed {
+    display: block;
+    margin: auto;
+    padding: 2px;
+  }

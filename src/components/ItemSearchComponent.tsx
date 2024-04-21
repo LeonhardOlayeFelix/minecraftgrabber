@@ -21,9 +21,6 @@ const ItemSearch = ({ items, className, maxResults }: Props) => {
       );
     setMatchedItems(filteredSortedItems);
   };
-  useEffect(() => {
-    console.log(matchedItems);
-  }, [matchedItems]);
 
   return (
     <div>

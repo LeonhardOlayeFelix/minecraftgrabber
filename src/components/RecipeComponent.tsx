@@ -17,7 +17,7 @@ const RecipeComponent = ({ recipe }: Props) => {
         width: "18rem",
       }}
     >
-      <div className="d-flex justify-content-between m-3 align-items-center">
+      {/* <div className="d-flex justify-content-between m-3 align-items-center">
         <h5 className="card-title">{item?.name}</h5>
         <img
           style={{ width: "40px" }} // Using inline styles to specify width
@@ -38,7 +38,7 @@ const RecipeComponent = ({ recipe }: Props) => {
         <a href="#" className="btn btn-success">
           More Details
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };
