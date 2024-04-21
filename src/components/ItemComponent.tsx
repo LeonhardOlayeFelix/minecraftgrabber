@@ -25,14 +25,7 @@ const ItemComponent = ({ item, className }: Props) => {
         />
       </div>
 
-      <div
-        className="card-body text-bg-dark"
-        style={{
-          borderBottomLeftRadius: "20px",
-          borderBottomRightRadius: "20px",
-          backgroundColor: "red",
-        }}
-      >
+      <div className="card-body">
         <p className="card-text">{item?.description}</p>
         <a href="#" className="btn btn-success">
           More Details

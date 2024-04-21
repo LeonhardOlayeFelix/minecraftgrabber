@@ -12,7 +12,6 @@ interface Props {
 }
 
 const ItemSearch = ({ items, className, maxResults }: Props) => {
-  const [itemsToDisplay, setItemsToDisplay] = useState<ItemsProps[]>([]);
   const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([]);
   const handleOnSearch = (name: string) => {
     console.log("name passed: " + name);
@@ -26,7 +25,6 @@ const ItemSearch = ({ items, className, maxResults }: Props) => {
         itemToCheck.name.toLowerCase().includes(name.toLowerCase())
       )
     );
-    setItemsToDisplay(matchedItems);
   };
 
   return (
