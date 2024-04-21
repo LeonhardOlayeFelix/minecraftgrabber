@@ -1,8 +1,12 @@
+import { useState } from "react";
 import ItemComponent from "./components/ItemComponent";
 import ItemGridComponent from "./components/ItemGridComponent";
 import RecipeComponent from "./components/RecipeComponent";
 import RecipeListGroupComponent from "./components/RecipeGridComponent";
-import useBlocksAndItems from "./hooks/useMinecraftHook";
+import useBlocksAndItems, { ItemsProps } from "./hooks/useMinecraftHook";
+import Form from "./components/Form";
+import ItemSearch from "./components/ItemSearchComponent";
+
 //This is enough for the items.
 
 const App = () => {
@@ -37,7 +41,7 @@ const App = () => {
         ))}
       </ul> */}
       {/* <RecipeListGroupComponent recipes={recipes.splice(0, 100)} /> */}
-      <ItemGridComponent items={items.splice(0, 100)} />
+      <ItemSearch className="center" items={items}></ItemSearch>
     </div>
   );
 };

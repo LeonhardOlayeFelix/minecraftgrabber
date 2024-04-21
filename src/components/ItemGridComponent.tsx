@@ -5,11 +5,12 @@ import ItemComponent from "./ItemComponent";
 
 interface Props {
   items: ItemsProps[];
+  className?: string;
 }
 
-const ItemGridComponent = ({ items }: Props) => {
+const ItemGridComponent = ({ items, className }: Props) => {
   return (
-    <div className="center">
+    <div className={className}>
       <div className="m-3 d-flex">
         <div>
           {items.map(

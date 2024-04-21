@@ -1,0 +1,12 @@
+.center {
+    display: flex; /* Flexbox display */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content (if needed) */
+    width: 100%; /* Take full width to center within it */
+  }
+
+  .borderfill {
+    border-color: black;   /* Sets the border color */
+    border-width: 2px;     /* Sets the width of the border */
+    border-style: solid;   /* Required to make the border visible */
+  }
