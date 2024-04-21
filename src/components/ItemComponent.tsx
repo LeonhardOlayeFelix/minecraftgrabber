@@ -34,7 +34,7 @@ const ItemComponent = ({ item }: Props) => {
       >
         <p className="card-text">{item?.description}</p>
         <a href="#" className="btn btn-success">
-          More
+          More Details
         </a>
       </div>
     </div>

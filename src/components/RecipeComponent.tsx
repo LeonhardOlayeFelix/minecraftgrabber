@@ -36,7 +36,7 @@ const RecipeComponent = ({ recipe }: Props) => {
       >
         <p className="card-text">{item?.description}</p>
         <a href="#" className="btn btn-success">
-          More
+          Details
         </a>
       </div>
     </div>
