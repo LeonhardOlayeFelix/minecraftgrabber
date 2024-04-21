@@ -1,5 +1,5 @@
 import RecipeComponent from "./components/RecipeComponent";
-import RecipeListGroupComponent from "./components/RecipeListGroupComponent";
+import RecipeListGroupComponent from "./components/RecipeGridComponent";
 import useBlocksAndItems from "./hooks/useMinecraftHook";
 //This is enough for the items.
 
@@ -34,7 +34,7 @@ const App = () => {
           </li>
         ))}
       </ul> */}
-      <RecipeListGroupComponent recipes={recipes.splice(0, 10)} />
+      <RecipeListGroupComponent recipes={recipes.splice(0, 100)} />
     </div>
   );
 };

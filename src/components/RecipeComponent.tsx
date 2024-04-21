@@ -1,6 +1,6 @@
 import React from "react";
 import useBlocksAndItems, { RecipeProps } from "../hooks/useMinecraftHook";
-
+import "./RecipeComponent.css";
 interface Props {
   recipe: RecipeProps;
 }
@@ -31,11 +31,12 @@ const RecipeComponent = ({ recipe }: Props) => {
         style={{
           borderBottomLeftRadius: "20px",
           borderBottomRightRadius: "20px",
+          backgroundColor: "red",
         }}
       >
         <p className="card-text">{item?.description}</p>
         <a href="#" className="btn btn-primary">
-          Go somewhere
+          More
         </a>
       </div>
     </div>
