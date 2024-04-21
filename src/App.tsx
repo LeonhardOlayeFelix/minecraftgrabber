@@ -34,7 +34,7 @@ const App = () => {
           </li>
         ))}
       </ul> */}
-      <RecipeListGroupComponent recipes={recipes.splice(0, 50)} />
+      <RecipeListGroupComponent recipes={recipes.splice(0, 10)} />
     </div>
   );
 };

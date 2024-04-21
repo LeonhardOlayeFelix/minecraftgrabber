@@ -22,7 +22,7 @@ const RecipeComponent = ({ recipe }: Props) => {
         <img
           style={{ width: "40px" }} // Using inline styles to specify width
           src={item?.image}
-          alt="Grass Block"
+          alt=""
         />
       </div>
 
