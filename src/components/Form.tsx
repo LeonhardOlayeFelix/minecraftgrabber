@@ -14,6 +14,7 @@ const Form = ({ onSearch }: Props) => {
   const [input, setInput] = useState("");
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    console.log("submitted input: ", input);
     onSearch(input);
   };
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {

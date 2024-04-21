@@ -8,21 +8,25 @@ import "./ItemSearchComponent.css";
 interface Props {
   items: ItemsProps[];
   className: string;
-  maxResults?: number;
+  maxResults: number;
 }
 
 const ItemSearch = ({ items, className, maxResults }: Props) => {
-  const [itemsToDisplay, setItemsToDisplay] = useState<ItemsProps[]>();
-  const [matchedItems, setMatchedItems] = useState<ItemsProps[]>();
+  const [itemsToDisplay, setItemsToDisplay] = useState<ItemsProps[]>([]);
+  const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([]);
   const handleOnSearch = (name: string) => {
+    console.log("name passed: " + name);
+    console.log(
+      items.filter((itemToCheck) =>
+        itemToCheck.name.toLowerCase().includes(name.toLowerCase())
+      )
+    );
     setMatchedItems(
       items.filter((itemToCheck) =>
         itemToCheck.name.toLowerCase().includes(name.toLowerCase())
       )
     );
-    setItemsToDisplay(
-      matchedItems?.splice(0, maxResults ? maxResults : matchedItems.length)
-    );
+    setItemsToDisplay(matchedItems);
   };
 
   return (
@@ -48,18 +52,27 @@ const ItemSearch = ({ items, className, maxResults }: Props) => {
         </div>
       </div>
       <div>
-        {itemsToDisplay !== undefined && (
-          <ItemGridComponent items={itemsToDisplay} />
+        {matchedItems !== undefined && maxResults && (
+          <ItemGridComponent
+            items={
+              maxResults > matchedItems.length
+                ? matchedItems
+                : matchedItems.splice(0, maxResults)
+            }
+          />
         )}
       </div>
       <div className="m-3">
         {maxResults && (
           <div>
             {"Displaying " +
-              itemsToDisplay?.length +
+              (maxResults > matchedItems.length
+                ? matchedItems
+                : matchedItems.splice(0, maxResults)
+              ).length +
               " of " +
               matchedItems?.length.toString() +
-              " total results"}
+              " results"}
           </div>
         )}
       </div>
