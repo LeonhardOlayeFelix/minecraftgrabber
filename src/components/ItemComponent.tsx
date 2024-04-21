@@ -1,14 +1,15 @@
 import React from "react";
 import { ItemsProps } from "../hooks/useMinecraftHook";
-
+import "./ItemComponents.css";
 interface Props {
   item: ItemsProps;
+  className?: string;
 }
 
-const ItemComponent = ({ item }: Props) => {
+const ItemComponent = ({ item, className }: Props) => {
   return (
     <div
-      className="card m-3"
+      className={"card m-3 " + className}
       style={{
         borderBottomLeftRadius: "20px",
         borderBottomRightRadius: "20px",

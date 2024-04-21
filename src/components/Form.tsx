@@ -2,6 +2,7 @@ import {
   ChangeEvent,
   FormEvent,
   HTMLInputTypeAttribute,
+  useEffect,
   useState,
 } from "react";
 
@@ -10,15 +11,18 @@ interface Props {
 }
 
 const Form = ({ onSearch }: Props) => {
+  const [input, setInput] = useState("");
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     onSearch(input);
   };
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
-    onSearch(input);
   };
-  const [input, setInput] = useState("");
+  useEffect(() => {
+    onSearch(input);
+  }, [input]);
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">

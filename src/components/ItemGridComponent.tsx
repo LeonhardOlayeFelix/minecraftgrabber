@@ -11,13 +11,13 @@ interface Props {
 const ItemGridComponent = ({ items, className }: Props) => {
   return (
     <div className={className}>
-      <div className="m-3 d-flex">
+      <div className="d-flex">
         <div>
           {items.map(
             (item, index) =>
               index % 3 === 0 && (
                 <div>
-                  <ItemComponent item={item} />
+                  <ItemComponent className="grow" item={item} />
                 </div>
               )
           )}
@@ -27,7 +27,7 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 1 && (
                 <div>
-                  <ItemComponent item={item} />
+                  <ItemComponent className="grow" item={item} />
                 </div>
               )
           )}
@@ -37,7 +37,7 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 2 && (
                 <div>
-                  <ItemComponent item={item} />
+                  <ItemComponent className="grow" item={item} />
                 </div>
               )
           )}

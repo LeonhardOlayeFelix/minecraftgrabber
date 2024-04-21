@@ -41,7 +41,7 @@ const App = () => {
         ))}
       </ul> */}
       {/* <RecipeListGroupComponent recipes={recipes.splice(0, 100)} /> */}
-      <ItemSearch className="center" items={items}></ItemSearch>
+      <ItemSearch maxResults={30} className="center" items={items}></ItemSearch>
     </div>
   );
 };

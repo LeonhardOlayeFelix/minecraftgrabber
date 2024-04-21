@@ -8,10 +8,22 @@ import "./ItemSearchComponent.css";
 interface Props {
   items: ItemsProps[];
   className: string;
+  maxResults?: number;
 }
 
-const ItemSearch = ({ items, className }: Props) => {
+const ItemSearch = ({ items, className, maxResults }: Props) => {
   const [itemsToDisplay, setItemsToDisplay] = useState<ItemsProps[]>();
+  const [matchedItems, setMatchedItems] = useState<ItemsProps[]>();
+  const handleOnSearch = (name: string) => {
+    setMatchedItems(
+      items.filter((itemToCheck) =>
+        itemToCheck.name.toLowerCase().includes(name.toLowerCase())
+      )
+    );
+    setItemsToDisplay(
+      matchedItems?.splice(0, maxResults ? maxResults : matchedItems.length)
+    );
+  };
 
   return (
     <div>
@@ -30,23 +42,25 @@ const ItemSearch = ({ items, className }: Props) => {
         >
           <Form
             onSearch={(name) => {
-              setItemsToDisplay(
-                items.filter((itemToCheck) =>
-                  itemToCheck.name.toLowerCase().includes(name.toLowerCase())
-                )
-              );
+              handleOnSearch(name);
             }}
           />
         </div>
       </div>
-      <div
-        style={{
-          borderBottomLeftRadius: "20px",
-          borderBottomRightRadius: "20px",
-        }}
-      >
+      <div>
         {itemsToDisplay !== undefined && (
           <ItemGridComponent items={itemsToDisplay} />
+        )}
+      </div>
+      <div className="m-3">
+        {maxResults && (
+          <div>
+            {"Displaying " +
+              itemsToDisplay?.length +
+              " of " +
+              matchedItems?.length.toString() +
+              " total results"}
+          </div>
         )}
       </div>
     </div>
