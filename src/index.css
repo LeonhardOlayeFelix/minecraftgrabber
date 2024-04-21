@@ -8,7 +8,3 @@
       opacity: 1;
     }
   }
-  
-  .grow {
-    animation: growAnimation 0.1s ease-out forwards; /* Adjust time and easing as needed */
-  }

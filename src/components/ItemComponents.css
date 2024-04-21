@@ -11,7 +11,7 @@
   
   .grow {
     animation: growAnimation 0.3s ease-out forwards; /* Adjust time and easing as needed */
-    
+
   }
 
   .green-glow{
