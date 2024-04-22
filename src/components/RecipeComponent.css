@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  width: auto;
   overflow-x: scroll;
   align-items: center;
   padding: 0em 1.1em 1.1em 1.1em;
@@ -88,3 +89,6 @@
   height: 1em;
 }
 
+#outer{
+  width: 22.5em;
+}

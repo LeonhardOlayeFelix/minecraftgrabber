@@ -1,0 +1,14 @@
+.align-center{
+    align-items: center;
+}
+.center {
+    display: flex; /* Flexbox display */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content (if needed) */
+  }
+
+.flexgrid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
