@@ -11,7 +11,7 @@ interface Props {
   maxResults: number;
 }
 
-const ItemSearch = ({ items, className, maxResults }: Props) => {
+const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
   const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([]);
   const handleOnSearch = (name: string) => {
     const filteredSortedItems = [...items]
@@ -65,4 +65,4 @@ const ItemSearch = ({ items, className, maxResults }: Props) => {
   );
 };
 
-export default ItemSearch;
+export default ItemSearchComponent;

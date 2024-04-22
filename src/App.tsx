@@ -10,6 +10,7 @@ import useBlocksAndItems, {
 import Form from "./components/Form";
 import ItemSearch from "./components/ItemSearchComponent";
 import CraftingTableComponent from "./components/CraftingTableComponent";
+import ItemSearchComponent from "./components/ItemSearchComponent";
 
 //This is enough for the items.
 
@@ -26,22 +27,11 @@ const App = () => {
   } = useBlocksAndItems();
   return (
     <div>
-      <CraftingTableComponent
-        recipe={recipes.find((item) => item.item === "Bucket") as RecipeProps}
-        items={items}
-        className="m-3"
-      />
+      <ItemSearchComponent items={items} className="m-3" maxResults={5} />
       <CraftingTableComponent
         recipe={
-          recipes.find(
-            (item) => item.item === "Orange Stained Glass"
-          ) as RecipeProps
+          recipes.find((item) => item.item === "White Wool") as RecipeProps
         }
-        items={items}
-        className="m-3"
-      />
-      <CraftingTableComponent
-        recipe={recipes.find((item) => item.item === "Bucket") as RecipeProps}
         items={items}
         className="m-3"
       />
