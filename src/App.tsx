@@ -27,11 +27,9 @@ const App = () => {
   } = useBlocksAndItems();
   return (
     <div>
-      <ItemSearchComponent items={items} className="m-3" maxResults={5} />
+      <ItemSearchComponent items={items} className="m-3" maxResults={3} />
       <CraftingTableComponent
-        recipe={
-          recipes.find((item) => item.item === "White Wool") as RecipeProps
-        }
+        recipe={recipes.find((item) => item.item === "Beacon") as RecipeProps}
         items={items}
         className="m-3"
       />

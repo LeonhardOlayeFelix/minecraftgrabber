@@ -38,6 +38,23 @@ const useBlocksAndItems = () =>{
     const [items, setItems] = useState<ItemsProps[]>([]);
     const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
+const beacon =  {
+  item: "Beacon",
+  quantity: 1,
+  recipe: [
+    "Glass",
+    "Glass",
+    "Glass",
+    "Glass",
+    "Nether Star",
+    "Glass",
+    "Obsidian",
+    "Obsidian",
+    "Obsidian"
+  ],
+  shapeless: false
+}
+
     useEffect(() => {
       const controller = new AbortController();
       const fetchData = async () => {
@@ -94,7 +111,13 @@ const useBlocksAndItems = () =>{
           setIsLoading(true);
           const anishRecipeResponse = await anishService.getAllRecipes();
           if (anishRecipeResponse.data){
-            setRecipes(anishRecipeResponse.data);
+            //There is erroneous data in this json file, I found one and fix it here.
+            setRecipes(anishRecipeResponse.data.map((recipe) => {
+              if (recipe.item === "Beacon"){
+                return beacon
+              }
+              return recipe
+            }))
           }
           else {
             controller.abort();
