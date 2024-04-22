@@ -29,7 +29,7 @@ interface BlocksProps extends AnishBlocksProps {
   export interface RecipeProps {
     item: string;
     quantity: number;
-    recipe: (string | null)[]
+    recipe: (string | string[] | null)[];
     shapeless: boolean;
   }
 const useBlocksAndItems = () =>{
@@ -93,7 +93,6 @@ const useBlocksAndItems = () =>{
           // Get Anish Recipes
           setIsLoading(true);
           const anishRecipeResponse = await anishService.getAllRecipes();
-          console.log(anishRecipeResponse);
           if (anishRecipeResponse.data){
             setRecipes(anishRecipeResponse.data);
           }

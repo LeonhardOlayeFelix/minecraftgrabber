@@ -1,10 +1,23 @@
+#grid {
+  width: 150px;
+}
+
 .grid-element {
-    background-color: #8b8b8b;
-    border-top: thick double #373737;
-    border-left: thick double #373737;
-    border-right: double #FFFFFF;
-    border-bottom: double #FFFFFF;
-    width: 36px;
-    height: 36px;
-    float: left;
+  background-color: #8b8b8b;
+  border-top: thick double #373737;
+  border-left: thick double #373737;
+  border-right: double #FFFFFF;
+  border-bottom: double #FFFFFF;
+  width: 50px;
+  height: 50px;
+  float: left;
+  display: flex;  /* Use flexbox */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+}
+  img.displayed {
+    display: block;
+    margin: auto;
+    padding: 2px;
+    width: 50px;
   }

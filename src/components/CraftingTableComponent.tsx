@@ -1,79 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CraftingTableComponent.css";
-const CraftingTableComponent = () => {
+import useBlocksAndItems, {
+  ItemsProps,
+  RecipeProps,
+} from "../hooks/useMinecraftHook";
+import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
+
+interface Props {
+  recipe: RecipeProps;
+  items: ItemsProps[];
+  className?: string;
+}
+
+const CraftingTableComponent = ({ recipe, items, className }: Props) => {
+  const [processedRecipe, setProcessedRecipe] = useState<string[]>([]);
+
+  const processRecipe = (recipe: (string | string[] | null)[]): string[] => {
+    return recipe.map((ingredient): string => {
+      if (ingredient === null) {
+        return "Air"; // Replace null with 'Air'
+      } else if (Array.isArray(ingredient)) {
+        return ingredient[0]; // Return only the first item from the array
+      } else {
+        return ingredient;
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (recipe) {
+      const newList = processRecipe(recipe.recipe);
+      setProcessedRecipe(newList);
+      console.log(newList);
+    }
+  }, [recipe]);
+
   return (
-    <div>
-      <div className="crafting">Crafting</div>
-
+    <div className={className}>
       <div id="grid">
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/57.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/0.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/0.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/264.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/0.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/264.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/264.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/0.png"
-          />
-        </div>
-
-        <div className="grid-element">
-          <img
-            className="displayed"
-            src="https://justplayhere.com/MinecraftData/images/264.png"
-          />
-        </div>
-      </div>
-
-      <div className="clear"></div>
-
-      <div className="arrow">
-        <i className="fa fa-arrow-right fa-3x"></i>
+        {recipe &&
+          items &&
+          processedRecipe.map((name, index) => (
+            <div>
+              <CraftingTableGridElementComponent
+                item={
+                  items.find(
+                    (item) => item.name === processedRecipe[index]
+                  ) as ItemsProps
+                }
+              />
+            </div>
+          ))}
       </div>
     </div>
   );
