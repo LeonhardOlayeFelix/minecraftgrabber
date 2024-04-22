@@ -16,31 +16,33 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
     onClick();
   };
   return (
-    <div id="screen" className="div-border">
-      <div>
-        {recipe && (
-          <div id="item-name-div">
-            <p id="item-name">Crafting</p>
-          </div>
-        )}
+    <div id="screen" className="screen div-border">
+      <div id="crafting-div">
+        <div>
+          <p id="item-name">Crafting</p>
+        </div>
+      </div>
+      <div id="" className="crafting-area">
         <div>
           <CraftingTableComponent recipe={recipe} items={items} className="" />
         </div>
-      </div>
-      <div className="arrow">&#10132;</div>
-      <div id="result">
-        {recipe && items.find((item) => item.name === recipe.item) && (
-          <img
-            className="displayed"
-            src={items.find((item) => item.name === recipe.item)?.image}
-            alt={recipe.item || "Image"}
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title={recipe.item || "click for more!"}
-            style={{ cursor: "pointer" }}
-            onClick={(event) => handleOnClick(event.target as HTMLImageElement)}
-          />
-        )}
+        <div className="arrow">&#10132;</div>
+        <div id="result">
+          {recipe && items.find((item) => item.name === recipe.item) && (
+            <img
+              className="displayed"
+              src={items.find((item) => item.name === recipe.item)?.image}
+              alt={recipe.item || "Image"}
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title={recipe.item || "click for more!"}
+              style={{ cursor: "pointer" }}
+              onClick={(event) =>
+                handleOnClick(event.target as HTMLImageElement)
+              }
+            />
+          )}
+        </div>
       </div>
     </div>
   );
