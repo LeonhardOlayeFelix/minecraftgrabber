@@ -1,16 +1,7 @@
-import { useState } from "react";
-import ItemComponent from "./components/ItemComponent";
-import ItemGridComponent from "./components/ItemGridComponent";
-import RecipeComponent from "./components/RecipeComponent";
-import RecipeListGroupComponent from "./components/RecipeGridComponent";
-import useBlocksAndItems, {
-  ItemsProps,
-  RecipeProps,
-} from "./hooks/useMinecraftHook";
-import Form from "./components/Form";
-import ItemSearch from "./components/ItemSearchComponent";
+import useBlocksAndItems, { RecipeProps } from "./hooks/useMinecraftHook";
 import CraftingTableComponent from "./components/CraftingTableComponent";
 import ItemSearchComponent from "./components/ItemSearchComponent";
+import ItemGridComponent from "./components/ItemGridComponent";
 
 //This is enough for the items.
 
@@ -26,13 +17,14 @@ const App = () => {
     setIsLoading,
   } = useBlocksAndItems();
   return (
-    <div>
+    <div className="center">
       <ItemSearchComponent items={items} className="m-3" maxResults={3} />
       <CraftingTableComponent
         recipe={recipes.find((item) => item.item === "Beacon") as RecipeProps}
         items={items}
         className="m-3"
       />
+      <ItemGridComponent maxSize={5} items={items} />
     </div>
   );
 };

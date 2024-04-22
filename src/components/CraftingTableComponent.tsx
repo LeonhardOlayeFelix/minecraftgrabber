@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./CraftingTableComponent.css";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
@@ -40,11 +40,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
             <div key={index}>
               <CraftingTableGridElementComponent
                 onClick={() => 1}
-                item={
-                  items.find(
-                    (item) => item.name === processedRecipe[index]
-                  ) as ItemsProps
-                }
+                item={items.find((item) => item.name === name) as ItemsProps}
               />
             </div>
           ))}
