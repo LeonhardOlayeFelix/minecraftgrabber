@@ -6,14 +6,10 @@ interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
   className?: string;
-  onClick: () => void;
 }
 
-const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
+const RecipeComponent = ({ recipe, items, className }: Props) => {
   const [recipeIsLoading, setRecipeIsLoading] = useState(true);
-  const handleOnClick = (event: HTMLImageElement) => {
-    onClick();
-  };
   return (
     <div className="screen">
       <div id="crafting-div">
@@ -39,15 +35,15 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
                   <img
                     className="result-displayed grow "
                     src={items.find((item) => item.name === recipe.item)?.image}
-                    alt={recipe.item || "Image"}
+                    alt={
+                      items.find((item) => item.name === recipe.item)
+                        ?.namespacedId || "Image"
+                    }
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                     title={recipe.item || "click for more!"}
                     style={{ cursor: "pointer" }}
                     key={recipe.item}
-                    onClick={(event) =>
-                      handleOnClick(event.target as HTMLImageElement)
-                    }
                   />
                   <p className="quantity ">{""}</p>
                 </div>
@@ -57,15 +53,15 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
                   <img
                     className="result-displayed-1 grow"
                     src={items.find((item) => item.name === recipe.item)?.image}
-                    alt={recipe.item || "Image"}
+                    alt={
+                      items.find((item) => item.name === recipe.item)
+                        ?.namespacedId || "Image"
+                    }
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                     title={recipe.item || "click for more!"}
                     style={{ cursor: "pointer" }}
                     key={recipe.item}
-                    onClick={(event) =>
-                      handleOnClick(event.target as HTMLImageElement)
-                    }
                   />
                   <p className="quantity grow ">{recipe.quantity}</p>
                 </div>

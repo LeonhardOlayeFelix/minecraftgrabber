@@ -36,7 +36,6 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
           processedRecipe.map((name, index) => (
             <div key={index}>
               <CraftingTableGridElementComponent
-                onClick={() => 1}
                 item={items.find((item) => item.name === name) as ItemsProps}
               />
             </div>

@@ -29,7 +29,6 @@ const App = () => {
           recipes.find((item) => item.item === "Respawn Anchor") as RecipeProps
         }
         items={items}
-        onClick={() => 1}
       />
     </div>
   );
