@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CraftingTableComponent.css";
-import useBlocksAndItems, {
-  ItemsProps,
-  RecipeProps,
-} from "../hooks/useMinecraftHook";
+import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
 
 interface Props {
@@ -31,7 +28,6 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
     if (recipe) {
       const newList = processRecipe(recipe.recipe);
       setProcessedRecipe(newList);
-      console.log(newList);
     }
   }, [recipe]);
 
@@ -41,8 +37,9 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
         {recipe &&
           items &&
           processedRecipe.map((name, index) => (
-            <div>
+            <div key={index}>
               <CraftingTableGridElementComponent
+                onClick={() => 1}
                 item={
                   items.find(
                     (item) => item.name === processedRecipe[index]

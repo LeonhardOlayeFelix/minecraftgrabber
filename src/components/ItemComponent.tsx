@@ -1,6 +1,6 @@
 import React from "react";
 import { ItemsProps } from "../hooks/useMinecraftHook";
-import "./ItemComponents.css";
+import "./ItemComponent.css";
 interface Props {
   item: ItemsProps;
   className?: string;

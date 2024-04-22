@@ -3,10 +3,14 @@ import { ItemsProps } from "../hooks/useMinecraftHook";
 
 interface Props {
   item: ItemsProps;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
+  const handleOnClick = (event: HTMLImageElement) => {
+    onClick();
+    console.log(event.alt);
+  };
   return (
     <div className="grid-element image-container">
       {item && (
@@ -19,6 +23,7 @@ const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
           title={item.name || "click for more!"}
           data-bs-delay={100}
           style={{ cursor: "pointer" }}
+          onClick={(event) => handleOnClick(event.target as HTMLImageElement)}
         />
       )}
     </div>
