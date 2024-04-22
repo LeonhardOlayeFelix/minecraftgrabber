@@ -29,7 +29,7 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
       </div>
       <div className="arrow">&#10132;</div>
       <div id="result">
-        {recipe && (
+        {recipe && items.find((item) => item.name === recipe.item) && (
           <img
             className="displayed"
             src={items.find((item) => item.name === recipe.item)?.image}

@@ -54,6 +54,22 @@ const beacon =  {
   ],
   shapeless: false
 }
+const noRecipe =  {
+  item: "Empty",
+  quantity: 1,
+  recipe: [
+    "Air",
+    "Air",
+    "Air",
+    "Air",
+    "Air",
+    "Air",
+    "Air",
+    "Air",
+    "Air"
+  ],
+  shapeless: false
+}
 
     useEffect(() => {
       const controller = new AbortController();
@@ -68,6 +84,7 @@ const beacon =  {
           const minecraftDataItemsResponse =
             await minecraftDataService.getAllItems();
           if (minecraftDataItemsResponse.data && anishItemsResponse.data) {
+            
             mergeItemData(
               minecraftDataItemsResponse.data,
               anishItemsResponse.data
@@ -112,12 +129,15 @@ const beacon =  {
           const anishRecipeResponse = await anishService.getAllRecipes();
           if (anishRecipeResponse.data){
             //There is erroneous data in this json file, I found one and fix it here.
-            setRecipes(anishRecipeResponse.data.map((recipe) => {
+            const correctedData = anishRecipeResponse.data.map((recipe) => {
               if (recipe.item === "Beacon"){
                 return beacon
               }
               return recipe
-            }))
+            })
+            //Also need to add the empty recipe to the data
+            correctedData.push(noRecipe)
+            setRecipes(correctedData)
           }
           else {
             controller.abort();
@@ -154,7 +174,8 @@ const beacon =  {
         }
         return anishItem;
       });
-      setItems(mergedItems as ItemsProps[]);
+      console.log(mergedItems)
+      setItems((mergedItems as ItemsProps[]));
     };
   
     const mergeBlockData = (
