@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./CraftingTableComponent.css";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
 

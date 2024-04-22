@@ -25,9 +25,18 @@ const App = () => {
         className="m-3"
       /> */}
       <RecipeComponent
-        recipe={recipes.find((item) => item.item === "Beacon") as RecipeProps}
+        recipe={
+          recipes.find((item) => item.item === "Oak Planks") as RecipeProps
+        }
         items={items}
         onClick={() => 1}
+      />
+      <CraftingTableComponent
+        recipe={
+          recipes.find((item) => item.item === "Oak Planks") as RecipeProps
+        }
+        items={items}
+        className="m-3"
       />
     </div>
   );
