@@ -26,7 +26,7 @@ const App = () => {
       /> */}
       <RecipeComponent
         recipe={
-          recipes.find((item) => item.item === "Oak Planks") as RecipeProps
+          recipes.find((item) => item.item === "Respawn Anchor") as RecipeProps
         }
         items={items}
         onClick={() => 1}

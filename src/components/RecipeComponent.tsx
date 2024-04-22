@@ -10,14 +10,21 @@ interface Props {
 }
 
 const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [recipeIsLoading, setRecipeIsLoading] = useState(true);
   const handleOnClick = (event: HTMLImageElement) => {
     onClick();
   };
   return (
     <div className="screen">
       <div id="crafting-div">
-        <p id="crafting-lbl">Crafting</p>
+        <div>
+          <p id="crafting-lbl">Crafting</p>
+        </div>
+        <div
+          className="spinner-border spinner-border-sm"
+          style={{ marginTop: "0.7em" }}
+          role="status"
+        ></div>
       </div>
       <div className="crafting-area">
         <div>
