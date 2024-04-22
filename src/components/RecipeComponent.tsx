@@ -16,7 +16,7 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
     onClick();
   };
   return (
-    <div id="screen" className="screen div-border">
+    <div id="screen" className="screen">
       <div id="crafting-div">
         <div>
           <p id="item-name">Crafting</p>
