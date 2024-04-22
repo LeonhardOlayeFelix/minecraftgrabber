@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  FormEvent,
-  HTMLInputTypeAttribute,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 interface Props {
   onSearch: (value: string) => void;

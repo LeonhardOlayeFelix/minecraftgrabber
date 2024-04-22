@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./ItemSearchComponent.css";
 import Form from "./Form";
 import { ItemsProps } from "../hooks/useMinecraftHook";
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
-  const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([]);
+  const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([...items]);
   const handleOnSearch = (name: string) => {
     const filteredSortedItems = [...items]
       .sort((a, b) => a.name.length - b.name.length)

@@ -9,6 +9,7 @@ interface Props {
 const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
   const handleOnClick = (event: HTMLImageElement) => {
     onClick();
+    console.log(event.alt);
   };
   return (
     <div className="grid-element image-container">
