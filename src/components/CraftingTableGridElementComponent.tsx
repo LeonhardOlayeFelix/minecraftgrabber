@@ -12,7 +12,7 @@ const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
     console.log(event.alt);
   };
   return (
-    <div className="grid-element image-container">
+    <div className="grid-element">
       {item && (
         <img
           className="displayed"
