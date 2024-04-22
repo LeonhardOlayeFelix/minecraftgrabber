@@ -12,7 +12,6 @@ interface Props {
 const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const handleOnClick = (event: HTMLImageElement) => {
-    console.log(event.alt);
     onClick();
   };
   return (
@@ -27,18 +26,24 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
         <div className="arrow">&#10132;</div>
         <div id="result">
           {recipe && items.find((item) => item.name === recipe.item) && (
-            <img
-              className="result-displayed"
-              src={items.find((item) => item.name === recipe.item)?.image}
-              alt={recipe.item || "Image"}
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              title={recipe.item || "click for more!"}
-              style={{ cursor: "pointer" }}
-              onClick={(event) =>
-                handleOnClick(event.target as HTMLImageElement)
-              }
-            />
+            <>
+              <img
+                className="result-displayed grow"
+                src={items.find((item) => item.name === recipe.item)?.image}
+                alt={recipe.item || "Image"}
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title={recipe.item || "click for more!"}
+                style={{ cursor: "pointer" }}
+                key={recipe.item}
+                onClick={(event) =>
+                  handleOnClick(event.target as HTMLImageElement)
+                }
+              />
+              <p className="quantity">
+                {recipe.quantity !== 1 ? recipe.quantity : ""}
+              </p>
+            </>
           )}
         </div>
       </div>

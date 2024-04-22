@@ -174,7 +174,6 @@ const noRecipe =  {
         }
         return anishItem;
       });
-      console.log(mergedItems)
       setItems((mergedItems as ItemsProps[]));
     };
   

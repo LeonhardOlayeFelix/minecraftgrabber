@@ -15,7 +15,7 @@ const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
     <div className="grid-element">
       {item && (
         <img
-          className="displayed"
+          className="displayed grow"
           src={item.image}
           alt={item.name || "..."}
           data-bs-toggle="tooltip"
