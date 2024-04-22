@@ -27,22 +27,42 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
         <div id="result">
           {recipe && items.find((item) => item.name === recipe.item) && (
             <>
-              <img
-                className="result-displayed grow"
-                src={items.find((item) => item.name === recipe.item)?.image}
-                alt={recipe.item || "Image"}
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title={recipe.item || "click for more!"}
-                style={{ cursor: "pointer" }}
-                key={recipe.item}
-                onClick={(event) =>
-                  handleOnClick(event.target as HTMLImageElement)
-                }
-              />
-              <p className="quantity">
-                {recipe.quantity !== 1 ? recipe.quantity : ""}
-              </p>
+              {recipe.quantity == 1 && (
+                <div className="result-box ">
+                  <img
+                    className="result-displayed grow "
+                    src={items.find((item) => item.name === recipe.item)?.image}
+                    alt={recipe.item || "Image"}
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title={recipe.item || "click for more!"}
+                    style={{ cursor: "pointer" }}
+                    key={recipe.item}
+                    onClick={(event) =>
+                      handleOnClick(event.target as HTMLImageElement)
+                    }
+                  />
+                  <p className="quantity ">{""}</p>
+                </div>
+              )}
+              {recipe.quantity !== 1 && (
+                <div className="result-box">
+                  <img
+                    className="result-displayed-1 grow"
+                    src={items.find((item) => item.name === recipe.item)?.image}
+                    alt={recipe.item || "Image"}
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title={recipe.item || "click for more!"}
+                    style={{ cursor: "pointer" }}
+                    key={recipe.item}
+                    onClick={(event) =>
+                      handleOnClick(event.target as HTMLImageElement)
+                    }
+                  />
+                  <p className="quantity grow ">{recipe.quantity}</p>
+                </div>
+              )}
             </>
           )}
         </div>
