@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Roboto Remix';
+    src: url('../assets/fonts/roboto-remix-font/Minecraftchmc-dBlX.ttf') format('truetype');
+  }
+#screen {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    align-items: center;
+    padding: 0px 20px 20px 20px;
+    border-radius: 6px;
+    background-color: #C7C7C7;
+  }
+  .div-border {
+    border-style: solid; /* Defines the style of the border */
+    border-width: 2px;   /* Defines the thickness of the border */
+    border-color: black; /* Defines the color of the border */
+    border-radius: 6px;
+  }
+  .arrow {
+   padding: 20px;
+   font-size: 64px;
+ }
+ #result {
+    box-sizing: border-box;
+    background-color: #8b8b8b;
+    border-top: thick double #373737;
+    border-left: thick double #373737;
+    border-right: double #FFFFFF;
+    border-bottom: double #FFFFFF;
+    width: 64px;
+    height: 64px;
+  }
+  #item-name{
+    font-size: 1.7em;
+    font-family: 'Roboto Remix', sans-serif;
+  }
+  #item-name-div{
+    display: flex;
+    flex-direction: column;
+  }
+
