@@ -1,4 +1,3 @@
-import React from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import "./ItemGridComponent.css";
 import ItemComponent from "./ItemComponent";
