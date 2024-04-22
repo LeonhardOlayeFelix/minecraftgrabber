@@ -15,9 +15,9 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
   const processRecipe = (recipe: (string | string[] | null)[]): string[] => {
     return recipe.map((ingredient): string => {
       if (ingredient === null) {
-        return "Air"; // Replace null with 'Air'
+        return "Air";
       } else if (Array.isArray(ingredient)) {
-        return ingredient[0]; // Return only the first item from the array
+        return ingredient[0];
       } else {
         return ingredient;
       }
@@ -35,7 +35,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
     <div className={className}>
       <div id="grid">
         {recipe &&
-          items &&
+          // items && if errors come up bring this line back and see what happens
           processedRecipe.map((name, index) => (
             <div key={index}>
               <CraftingTableGridElementComponent
@@ -43,6 +43,10 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
                 item={items.find((item) => item.name === name) as ItemsProps}
               />
             </div>
+          ))}
+        {!recipe &&
+          Array.from({ length: 9 }, (_, index) => (
+            <div key={index} className="grid-element"></div>
           ))}
       </div>
     </div>

@@ -45,3 +45,7 @@ body {
     padding: 2px;
     width: 50px;
   }
+
+  .test{
+    background-color: green;
+  }
