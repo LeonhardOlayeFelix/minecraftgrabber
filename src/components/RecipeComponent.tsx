@@ -16,13 +16,11 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
     onClick();
   };
   return (
-    <div id="screen" className="screen">
+    <div className="screen">
       <div id="crafting-div">
-        <div>
-          <p id="item-name">Crafting</p>
-        </div>
+        <p id="crafting-lbl">Crafting</p>
       </div>
-      <div id="" className="crafting-area">
+      <div className="crafting-area">
         <div>
           <CraftingTableComponent recipe={recipe} items={items} className="" />
         </div>
@@ -30,7 +28,7 @@ const RecipeComponent = ({ recipe, items, onClick, className }: Props) => {
         <div id="result">
           {recipe && items.find((item) => item.name === recipe.item) && (
             <img
-              className="displayed"
+              className="result-displayed"
               src={items.find((item) => item.name === recipe.item)?.image}
               alt={recipe.item || "Image"}
               data-bs-toggle="tooltip"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
-
+import "./CraftingTableComponent.css";
 interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
@@ -25,8 +25,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
 
   useEffect(() => {
     if (recipe) {
-      const newList = processRecipe(recipe.recipe);
-      setProcessedRecipe(newList);
+      setProcessedRecipe(processRecipe(recipe.recipe));
     }
   }, [recipe]);
 
@@ -34,7 +33,6 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
     <div className={className}>
       <div id="grid">
         {recipe &&
-          // items && if errors come up bring this line back and see what happens
           processedRecipe.map((name, index) => (
             <div key={index}>
               <CraftingTableGridElementComponent
@@ -44,6 +42,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
             </div>
           ))}
         {!recipe &&
+          //Need to show an empty grid if recipe does not exist
           Array.from({ length: 9 }, (_, index) => (
             <div key={index} className="grid-element"></div>
           ))}

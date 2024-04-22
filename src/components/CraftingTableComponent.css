@@ -1,3 +1,17 @@
 #grid {
+  width: 150px;
   float: left;
+}
+.grid-element {
+  background-color: #8b8b8b;
+  border-top: thick double #373737;
+  border-left: thick double #373737;
+  border-right: double #FFFFFF;
+  border-bottom: double #FFFFFF;
+  width: 50px;
+  height: 50px;
+  float: left;
+  display: flex;  /* Use flexbox */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
 }

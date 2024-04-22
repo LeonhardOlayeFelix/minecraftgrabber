@@ -17,10 +17,10 @@ const CraftingTableGridElementComponent = ({ item, onClick }: Props) => {
         <img
           className="displayed"
           src={item.image}
-          alt={item.name || "Image"}
+          alt={item.name || "..."}
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          title={item.name || "click for more!"}
+          title={item.name || "..."}
           data-bs-delay={100}
           style={{ cursor: "pointer" }}
           onClick={(event) => handleOnClick(event.target as HTMLImageElement)}

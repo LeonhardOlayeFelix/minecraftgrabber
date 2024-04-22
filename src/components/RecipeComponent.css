@@ -18,12 +18,12 @@
     border-right: thick double #535655;
     border-bottom: thick double #535655;
   }
-  .div-border {
-    border-style: solid; /* Defines the style of the border */
-    border-width: 2px;   /* Defines the thickness of the border */
-    border-color: black; /* Defines the color of the border */
+  .show-border {
+    border-style: solid;
+    border-width: 2px; 
+    border-color: black; 
     border-radius: 6px;
-  }
+  } /*Helps with showing where borders are*/
   .arrow {
    padding: 20px;
    font-size: 64px;
@@ -38,13 +38,9 @@
     width: 64px;
     height: 64px;
   }
-  #item-name{
+  #crafting-lbl{
     font-size: 1.7em;
     font-family: 'Roboto Remix', sans-serif;
-  }
-  #item-name-div{
-    display: flex;
-    flex-direction: column;
   }
   .crafting-area{
     display: flex;
@@ -53,7 +49,14 @@
     align-items: center;
   }
   #crafting-div{
-    /* width: 100%; This will make the "crafting" text go to the left*/
+    width: 100%;
     display: flex;
     justify-content: left;
+  }
+ 
+  .result-displayed {
+    display: block;
+    margin: auto;
+    padding: 0.5em 0em 0em 0em;
+    height: auto;
   }
