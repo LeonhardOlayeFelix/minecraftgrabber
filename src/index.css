@@ -1,15 +1,20 @@
 @keyframes growAnimation {
-    from {
-      transform: scale(0);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
+  from {
+    transform: scale(0);
+    opacity: 0;
   }
-  .center {
-    display: flex; /* Flexbox display */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content (if needed) */
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
+}
+.grow-1 {
+  animation: growAnimation 0.1s ease-out forwards; /* Adjust time and easing as needed */
+}
+
+
+.center {
+  display: flex; /* Flexbox display */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content (if needed) */
+}  

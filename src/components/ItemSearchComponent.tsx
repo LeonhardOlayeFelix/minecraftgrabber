@@ -7,7 +7,7 @@ import "./ItemSearchComponent.css";
 
 interface Props {
   items: ItemsProps[];
-  className: string;
+  className?: string;
   maxResults: number;
 }
 
@@ -23,7 +23,7 @@ const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
   };
 
   return (
-    <div>
+    <div className="">
       <div
         className={"card m-3"}
         style={{
@@ -31,9 +31,7 @@ const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
         }}
       >
         <div
-          className={
-            "d-flex justify-content-between m-3 align-items-center " + className
-          }
+          className={"d-flex justify-content-between m-3 align-items-center "}
         >
           <Form onSearch={handleOnSearch} />
         </div>
@@ -41,6 +39,7 @@ const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
       <div>
         {matchedItems && maxResults && (
           <ItemGridComponent
+            animation="grow-1"
             key={new Date().toISOString()}
             items={matchedItems.slice(0, maxResults)}
           />

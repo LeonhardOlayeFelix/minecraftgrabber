@@ -3,14 +3,20 @@ import { ItemsProps } from "../hooks/useMinecraftHook";
 
 interface Props {
   item: ItemsProps;
+  className?: string;
+  gridElementAnimation?: string;
 }
 
-const CraftingTableGridElementComponent = ({ item }: Props) => {
+const CraftingTableGridElementComponent = ({
+  item,
+  className,
+  gridElementAnimation,
+}: Props) => {
   return (
-    <div className="grid-element">
+    <div className={"grid-element " + className}>
       {item && (
         <img
-          className="displayed grow"
+          className={"displayed " + gridElementAnimation}
           src={item.image}
           alt={item.namespacedId || "..."}
           data-bs-toggle="tooltip"

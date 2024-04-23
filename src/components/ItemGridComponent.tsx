@@ -5,9 +5,10 @@ import ItemComponent from "./ItemComponent";
 interface Props {
   items: ItemsProps[];
   className?: string;
+  animation: string;
 }
 
-const ItemGridComponent = ({ items, className }: Props) => {
+const ItemGridComponent = ({ items, className, animation }: Props) => {
   return (
     <div className={className}>
       <div className="d-flex">
@@ -16,7 +17,10 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 0 && (
                 <div key={index}>
-                  <ItemComponent className="grow green-glow" item={item} />
+                  <ItemComponent
+                    className={"green-glow " + animation}
+                    item={item}
+                  />
                 </div>
               )
           )}
@@ -26,7 +30,10 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 1 && (
                 <div key={index}>
-                  <ItemComponent className="grow green-glow" item={item} />
+                  <ItemComponent
+                    className={"green-glow " + animation}
+                    item={item}
+                  />
                 </div>
               )
           )}
@@ -36,7 +43,10 @@ const ItemGridComponent = ({ items, className }: Props) => {
             (item, index) =>
               index % 3 === 2 && (
                 <div key={index}>
-                  <ItemComponent className="grow green-glow" item={item} />
+                  <ItemComponent
+                    className={"green-glow " + animation}
+                    item={item}
+                  />
                 </div>
               )
           )}

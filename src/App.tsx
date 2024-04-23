@@ -1,7 +1,8 @@
 import useBlocksAndItems, { RecipeProps } from "./hooks/useMinecraftHook";
-import CraftingTableComponent from "./components/CraftingTableComponent";
-import ItemSearchComponent from "./components/ItemSearchComponent";
 import RecipeComponent from "./components/RecipeComponent";
+import "./index.css";
+import ItemSearchComponent from "./components/ItemSearchComponent";
+import CraftingTableComponent from "./components/CraftingTableComponent";
 
 //This is enough for the items.
 
@@ -17,14 +18,11 @@ const App = () => {
     setIsLoading,
   } = useBlocksAndItems();
   return (
-    <div className="center">
-      <ItemSearchComponent items={items} className="m-3" maxResults={3} />
-      {/* <CraftingTableComponent
-        recipe={recipes.find((item) => item.item === "Beacon") as RecipeProps}
-        items={items}
-        className="m-3"
-      /> */}
+    <div>
       <RecipeComponent
+        className="m-3"
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
         recipe={
           recipes.find((item) => item.item === "Respawn Anchor") as RecipeProps
         }

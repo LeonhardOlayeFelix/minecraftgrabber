@@ -6,9 +6,17 @@ interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
   className?: string;
+  gridElementAnimation?: string;
+  onLoad: () => void;
 }
 
-const CraftingTableComponent = ({ recipe, items, className }: Props) => {
+const CraftingTableComponent = ({
+  recipe,
+  items,
+  className,
+  gridElementAnimation,
+  onLoad,
+}: Props) => {
   const [processedRecipe, setProcessedRecipe] = useState<string[]>([]);
 
   const processRecipe = (recipe: (string | string[] | null)[]): string[] => {
@@ -26,6 +34,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
   useEffect(() => {
     if (recipe) {
       setProcessedRecipe(processRecipe(recipe.recipe));
+      onLoad();
     }
   }, [recipe]);
 
@@ -36,6 +45,7 @@ const CraftingTableComponent = ({ recipe, items, className }: Props) => {
           processedRecipe.map((name, index) => (
             <div key={index}>
               <CraftingTableGridElementComponent
+                gridElementAnimation={gridElementAnimation}
                 item={items.find((item) => item.name === name) as ItemsProps}
               />
             </div>
