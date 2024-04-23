@@ -24,7 +24,7 @@ const App = () => {
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "Oak Planks"
+    (recipe) => recipe.item === "Diamond Helmet"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
@@ -34,7 +34,7 @@ const App = () => {
   return (
     <div className="d-flex justify-content-start flex-wrap">
       <CraftingRecipeComponent
-        recipes={recipe3}
+        recipes={recipe2}
         className="m-3"
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
