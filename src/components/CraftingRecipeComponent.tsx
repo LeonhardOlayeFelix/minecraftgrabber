@@ -22,7 +22,7 @@ const CraftingRecipeComponent = ({
   return (
     <div
       id={carouselId}
-      className={"carousel carousel-dark slide" + className}
+      className={"carousel carousel-dark slide " + className}
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
@@ -40,6 +40,14 @@ const CraftingRecipeComponent = ({
             />
           </div>
         ))}
+        {recipes.length === 0 && (
+          <RecipeComponent
+            recipe={undefined as unknown as RecipeProps}
+            gridElementAnimation={gridElementAnimation}
+            gridResultAnimation={gridResultAnimation}
+            items={items}
+          />
+        )}
       </div>
       {recipes.length > 1 && (
         <button
