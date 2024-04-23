@@ -90,5 +90,5 @@
 }
 
 #outer{
-  width: 19em;
+  width: var(--crafting-table-size);
 }

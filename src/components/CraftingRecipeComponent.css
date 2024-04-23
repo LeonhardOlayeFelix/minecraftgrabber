@@ -1,6 +1,9 @@
-#outer-crafting{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+#crafting-outer-div{
+width: var(--crafting-table-size);
+overflow: hidden; /* Hide any content that goes beyond the div's boundaries */
+border: 1px solid #ccc; /* Optional: adds a border for visibility */
+
 }
+.carousel-item {
+    overflow: hidden; /* Prevents content from overflowing */
+  }
