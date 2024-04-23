@@ -40,6 +40,20 @@ const App = () => {
         gridResultAnimation="grow-1"
         items={items}
       />
+      <CraftingRecipeComponent
+        recipes={recipe1}
+        className="m-3"
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+      />
+      <CraftingRecipeComponent
+        recipes={recipe3}
+        className="m-3"
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+      />
     </div>
   );
 };
