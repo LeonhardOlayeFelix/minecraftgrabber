@@ -24,7 +24,9 @@ const App = () => {
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         recipe={
-          recipes.find((item) => item.item === "Respawn Anchor") as RecipeProps
+          recipes.find(
+            (recipe) => recipe.item === "Respawn Anchor"
+          ) as RecipeProps
         }
         items={items}
       />
