@@ -3,6 +3,7 @@ import RecipeComponent from "./components/RecipeComponent";
 import "./index.css";
 import ItemSearchComponent from "./components/ItemSearchComponent";
 import CraftingTableComponent from "./components/CraftingTableComponent";
+import CraftingRecipeComponent from "./components/CraftingRecipeComponent";
 
 //This is enough for the items.
 
@@ -17,37 +18,25 @@ const App = () => {
     setRecipes,
     setIsLoading,
   } = useBlocksAndItems();
+
+  const recipe1 = recipes.filter(
+    (recipe) => recipe.item === "Respawn Anchor"
+  ) as RecipeProps[];
+
+  const recipe2 = recipes.filter(
+    (recipe) => recipe.item === "Oak Planks"
+  ) as RecipeProps[];
+
+  const recipe3 = recipes.filter(
+    (recipe) => recipe.item === "Diamond Shovel"
+  ) as RecipeProps[];
   return (
     <div className="d-flex justify-content-start flex-wrap">
-      <RecipeComponent
-        className="m-3"
+      <CraftingRecipeComponent
+        recipes={[...recipe1, ...recipe2, ...recipe3]}
+        className="m-1"
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
-        recipe={
-          recipes.find(
-            (recipe) => recipe.item === "Respawn Anchor"
-          ) as RecipeProps
-        }
-        items={items}
-      />
-
-      <RecipeComponent
-        className="m-3"
-        gridElementAnimation="grow-1"
-        gridResultAnimation="grow-1"
-        recipe={
-          recipes.find((recipe) => recipe.item === "Oak Planks") as RecipeProps
-        }
-        items={items}
-      />
-
-      <RecipeComponent
-        className="m-3"
-        gridElementAnimation="grow-1"
-        gridResultAnimation="grow-1"
-        recipe={
-          recipes.find((recipe) => recipe.item === "Beacon") as RecipeProps
-        }
         items={items}
       />
     </div>

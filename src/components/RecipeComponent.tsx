@@ -26,7 +26,7 @@ const RecipeComponent = ({
       <div className={"screen"}>
         <div id="crafting-div">
           <div>
-            <p id="crafting-lbl">Crafting</p>
+            <p id="crafting-lbl">{recipe.item}</p>
           </div>
           {recipeIsLoading && (
             <div

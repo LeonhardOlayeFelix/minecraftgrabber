@@ -25,7 +25,7 @@
   border-radius: 6px;
 } /*Helps with showing where borders are*/
 .arrow {
-  padding: 0.3em;
+  padding: 0 0.3em 0 0;
   font-size: 3em;
 }
 #result {
@@ -90,5 +90,5 @@
 }
 
 #outer{
-  width: 19.6em;
+  width: 19em;
 }
