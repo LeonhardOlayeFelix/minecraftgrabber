@@ -18,7 +18,7 @@ const App = () => {
     setIsLoading,
   } = useBlocksAndItems();
   return (
-    <div>
+    <div className="d-flex justify-content-start flex-wrap">
       <RecipeComponent
         className="m-3"
         gridElementAnimation="grow-1"
@@ -27,6 +27,26 @@ const App = () => {
           recipes.find(
             (recipe) => recipe.item === "Respawn Anchor"
           ) as RecipeProps
+        }
+        items={items}
+      />
+
+      <RecipeComponent
+        className="m-3"
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        recipe={
+          recipes.find((recipe) => recipe.item === "Oak Planks") as RecipeProps
+        }
+        items={items}
+      />
+
+      <RecipeComponent
+        className="m-3"
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        recipe={
+          recipes.find((recipe) => recipe.item === "Beacon") as RecipeProps
         }
         items={items}
       />
