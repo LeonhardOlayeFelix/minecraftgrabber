@@ -30,11 +30,12 @@ const App = () => {
   const recipe3 = recipes.filter(
     (recipe) => recipe.item === "Diamond Shovel"
   ) as RecipeProps[];
+
   return (
     <div className="d-flex justify-content-start flex-wrap">
       <CraftingRecipeComponent
         recipes={[...recipe1, ...recipe2]}
-        className="grow-1"
+        className="m-3"
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}

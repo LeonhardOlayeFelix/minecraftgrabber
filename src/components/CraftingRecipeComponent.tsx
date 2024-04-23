@@ -20,10 +20,10 @@ const CraftingRecipeComponent = ({
 }: Props) => {
   const carouselId = "recipeCarousel";
   return (
-    <div id="crafting-outer-div" className="border">
+    <div id="crafting-outer-div" className={className}>
       <div
         id={carouselId}
-        className={"carousel carousel-dark slide " + className}
+        className={"carousel carousel-dark slide"}
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">

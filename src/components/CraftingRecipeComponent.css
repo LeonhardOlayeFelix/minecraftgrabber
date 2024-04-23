@@ -1,8 +1,6 @@
 #crafting-outer-div{
 width: var(--crafting-table-size);
-overflow: hidden; /* Hide any content that goes beyond the div's boundaries */
-border: 1px solid #ccc; /* Optional: adds a border for visibility */
-
+overflow: hidden; 
 }
 .carousel-item {
     overflow: hidden; /* Prevents content from overflowing */
