@@ -25,9 +25,7 @@ const RecipeComponent = ({
     <div id="outer" className={className}>
       <div className={"screen"}>
         <div id="crafting-div">
-          <div>
-            <p id="crafting-lbl">{recipe.item}</p>
-          </div>
+          <div>{recipe && <p id="crafting-lbl">{recipe.item}</p>}</div>
           {recipeIsLoading && (
             <div
               className="spinner-border spinner-border-sm"

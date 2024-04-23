@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RecipeProps, ItemsProps } from "../hooks/useMinecraftHook";
 import "./CraftingRecipeComponent.css";
 import RecipeComponent from "./RecipeComponent";
+
 interface Props {
   recipes: RecipeProps[]; //there might be multiple recipes, for example swords have 2 recipes: sword + sword or stick + diamond + diamond
   items: ItemsProps[];
@@ -28,7 +29,7 @@ const CraftingRecipeComponent = ({
         {recipes.map((recipe, index) => (
           <div
             key={index}
-            className={"carousel-item " + (index === 0 ? "active" : "")}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
             data-bs-interval="4000"
           >
             <RecipeComponent
