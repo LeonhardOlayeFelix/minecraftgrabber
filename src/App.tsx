@@ -19,12 +19,14 @@ const App = () => {
     setIsLoading,
   } = useBlocksAndItems();
 
+  //console.log(blocks.find((block) => block.name == "Diamond Ore"));
+
   const recipe1 = recipes.filter(
     (recipe) => recipe.item === "Bow"
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "Torch"
+    (recipe) => recipe.item === "White Dye"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
@@ -33,12 +35,6 @@ const App = () => {
 
   return (
     <div className="d-flex justify-content-start flex-wrap">
-      <CraftingRecipeComponent
-        recipes={recipe2}
-        gridElementAnimation="grow-1"
-        gridResultAnimation="grow-1"
-        items={items}
-      />
       <CraftingRecipeComponent
         recipes={recipe2}
         gridElementAnimation="grow-1"
