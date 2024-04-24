@@ -20,64 +20,64 @@ const CraftingRecipeComponent = ({
 }: Props) => {
   const carouselId = "recipeCarousel";
   return (
-    <div id="crafting-outer-div" className={className}>
-      <div
-        id={carouselId}
-        className={"carousel carousel-dark slide"}
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-inner">
-          {recipes.map((recipe, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-              data-bs-interval="4000"
-            >
+    <div id="carousel-container" className={className}>
+      <div id="crafting-outer-div">
+        <div
+          id={carouselId}
+          className={"carousel carousel-dark slide"}
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            {recipes.map((recipe, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+                data-bs-interval="4000"
+              >
+                <RecipeComponent
+                  recipe={recipe}
+                  gridElementAnimation={gridElementAnimation}
+                  gridResultAnimation={gridResultAnimation}
+                  items={items}
+                />
+              </div>
+            ))}
+            {recipes.length === 0 && (
               <RecipeComponent
-                recipe={recipe}
+                recipe={undefined as unknown as RecipeProps}
                 gridElementAnimation={gridElementAnimation}
                 gridResultAnimation={gridResultAnimation}
                 items={items}
               />
-            </div>
-          ))}
-          {recipes.length === 0 && (
-            <RecipeComponent
-              recipe={undefined as unknown as RecipeProps}
-              gridElementAnimation={gridElementAnimation}
-              gridResultAnimation={gridResultAnimation}
-              items={items}
-            />
+            )}
+          </div>
+          {recipes.length > 1 && (
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target={`#${carouselId}`}
+              data-bs-slide="prev"
+            >
+              <span className="carousel-left-arrow" aria-hidden="true">
+                &lt;
+              </span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+          )}
+          {recipes.length > 1 && (
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target={`#${carouselId}`}
+              data-bs-slide="next"
+            >
+              <span aria-hidden="true" className="carousel-right-arrow">
+                &gt;
+              </span>
+              <span className="visually-hidden">Next</span>
+            </button>
           )}
         </div>
-        {recipes.length > 1 && (
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target={`#${carouselId}`}
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-        )}
-        {recipes.length > 1 && (
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target={`#${carouselId}`}
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        )}
       </div>
     </div>
   );

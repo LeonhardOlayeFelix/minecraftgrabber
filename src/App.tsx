@@ -20,11 +20,11 @@ const App = () => {
   } = useBlocksAndItems();
 
   const recipe1 = recipes.filter(
-    (recipe) => recipe.item === "Respawn Anchor"
+    (recipe) => recipe.item === "Bow"
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "Diamond Helmet"
+    (recipe) => recipe.item === "Torch"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
@@ -35,20 +35,6 @@ const App = () => {
     <div className="d-flex justify-content-start flex-wrap">
       <CraftingRecipeComponent
         recipes={recipe2}
-        className="m-3"
-        gridElementAnimation="grow-1"
-        gridResultAnimation="grow-1"
-        items={items}
-      />
-      <CraftingRecipeComponent
-        recipes={recipe1}
-        className="m-3"
-        gridElementAnimation="grow-1"
-        gridResultAnimation="grow-1"
-        items={items}
-      />
-      <CraftingRecipeComponent
-        recipes={recipe3}
         className="m-3"
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
