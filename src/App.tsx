@@ -39,6 +39,12 @@ const App = () => {
         gridResultAnimation="grow-1"
         items={items}
       />
+      <CraftingRecipeComponent
+        recipes={recipe2}
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+      />
     </div>
   );
 };

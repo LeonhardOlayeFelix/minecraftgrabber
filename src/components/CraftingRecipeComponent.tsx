@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import { RecipeProps, ItemsProps } from "../hooks/useMinecraftHook";
 import "./CraftingRecipeComponent.css";
 import RecipeComponent from "./RecipeComponent";
@@ -18,7 +18,7 @@ const CraftingRecipeComponent = ({
   gridElementAnimation,
   gridResultAnimation,
 }: Props) => {
-  const carouselId = "recipeCarousel";
+  const carouselId = useId();
   return (
     <div id="carousel-container" className={className}>
       <div id="crafting-outer-div">
