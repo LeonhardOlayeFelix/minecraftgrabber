@@ -35,7 +35,6 @@ const App = () => {
     <div className="d-flex justify-content-start flex-wrap">
       <CraftingRecipeComponent
         recipes={recipe2}
-        className="m-3"
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
