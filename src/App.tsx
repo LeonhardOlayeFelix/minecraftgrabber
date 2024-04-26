@@ -42,6 +42,13 @@ const App = () => {
         items={items}
         craftingTableCellWidthHeight={"2.3em"}
       />
+      <CraftingRecipeComponent
+        recipes={recipe1}
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+        craftingTableCellWidthHeight={"2.3em"}
+      />
     </div>
   );
 };
