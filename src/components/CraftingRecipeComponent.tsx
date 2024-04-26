@@ -2,6 +2,7 @@ import React, { useId, useState } from "react";
 import { RecipeProps, ItemsProps } from "../hooks/useMinecraftHook";
 import "./CraftingRecipeComponent.css";
 import RecipeComponent from "./RecipeComponent";
+import { Box, Flex } from "@chakra-ui/react";
 
 interface Props {
   recipes: RecipeProps[]; //there might be multiple recipes, for example swords have 2 recipes: sword + sword or stick + diamond + diamond
@@ -31,6 +32,36 @@ const CraftingRecipeComponent = ({
       id="carousel-container"
       className={className}
     >
+      <Flex id="arrows-flex-container">
+        <Box>
+          {recipes.length > 1 && (
+            <button
+              type="button"
+              data-bs-target={`#${carouselId}`}
+              data-bs-slide="prev"
+            >
+              <span aria-hidden="true" className="carousel-left-arrow">
+                &lt;
+              </span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          )}
+        </Box>
+        <Box>
+          {recipes.length > 1 && (
+            <button
+              type="button"
+              data-bs-target={`#${carouselId}`}
+              data-bs-slide="next"
+            >
+              <span aria-hidden="true" className="carousel-right-arrow">
+                &gt;
+              </span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          )}
+        </Box>
+      </Flex>
       <div id="crafting-outer-div">
         <div
           id={carouselId}
@@ -63,7 +94,7 @@ const CraftingRecipeComponent = ({
               />
             )}
           </div>
-          {recipes.length > 1 && (
+          {/* {recipes.length > 1 && (
             <button
               className="carousel-control-prev"
               type="button"
@@ -88,7 +119,7 @@ const CraftingRecipeComponent = ({
               </span>
               <span className="visually-hidden">Next</span>
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </div>

@@ -11,33 +11,44 @@
   }
 
 
-#crafting-outer-div .carousel-control-prev,
+/* #crafting-outer-div .carousel-control-prev,
 #crafting-outer-div .carousel-control-next {
     position: absolute;
-    top: 50%; /* Aligns the button vertically in the middle */
-    transform: translateY(-50%); /* Centers the button vertically */
-    z-index: 10; /* Ensures the buttons are above other elements */
-}
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+} */
 
-#crafting-outer-div .carousel-control-prev {
-    /* left: calc(-100% + 16em); */
+/* #crafting-outer-div .carousel-control-prev {
+    left: calc(-100% + 16em);
     top: calc(11%);
 }
 
 #crafting-outer-div .carousel-control-next {
-    /* right: calc(-100% + 15.8em); */
+    right: calc(-100% + 15.8em);
     top: calc(11%);
-}
+} */
 .carousel-right-arrow{
   color: black;
   font-family: 'Roboto Remix', sans-serif;
   font-size: 3.5em;
+  line-height: 0.5;
 }
 .carousel-left-arrow{
   color: black;
   font-family: 'Roboto Remix', sans-serif;
   font-size: 3.5em;
+  line-height: 0.5;
 }
 /* #carousel-container{
   padding: 0em 1.3em 0em 1.3em;
 } */
+#carousel-container{
+  display: flex;
+  flex-direction: column;
+}
+#arrows-flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
