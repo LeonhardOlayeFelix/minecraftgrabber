@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableComponent from "./CraftingTableComponent";
 import "./RecipeComponent.css";
@@ -39,10 +39,9 @@ const RecipeComponent = ({
           display={"flex"}
           justifyContent={"start"}
         >
-          {recipe && (
+          {!recipeIsLoading && (
             <Box>
               <Text
-                id="crafting-lbl"
                 fontSize={"1.7em"}
                 fontFamily={"Roboto Remix"}
                 lineHeight={3}
@@ -52,11 +51,11 @@ const RecipeComponent = ({
             </Box>
           )}
           {recipeIsLoading && (
-            <div
+            <Box
               className="spinner-border spinner-border-sm"
-              style={{ marginTop: "0.7em", opacity: "0.6" }}
+              style={{ opacity: "0.6" }}
               role="status"
-            ></div>
+            ></Box>
           )}
         </Box>
         <div className="crafting-area">
