@@ -10,6 +10,7 @@ interface Props {
   gridElementAnimation?: string;
   gridResultAnimation?: string;
   craftingTableCellWidthHeight?: string;
+  craftingTableResultWidthHeight?: string;
 }
 
 const RecipeComponent = ({
@@ -19,6 +20,7 @@ const RecipeComponent = ({
   gridElementAnimation,
   gridResultAnimation,
   craftingTableCellWidthHeight,
+  craftingTableResultWidthHeight,
 }: Props) => {
   const [recipeIsLoading, setRecipeIsLoading] = useState(true);
   const handleOnLoad = () => {
