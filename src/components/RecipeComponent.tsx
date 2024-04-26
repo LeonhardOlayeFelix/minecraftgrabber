@@ -126,8 +126,8 @@ const RecipeComponent = ({
                     className="quantity"
                     style={{
                       position: "absolute", // Position the <p> element absolutely
-                      bottom: `calc(var(--crafting-table-cell-width-height) * -0.3)`,
-                      right: `calc(var(--crafting-table-cell-width-height) * -0.1)`,
+                      bottom: `calc(var(--crafting-table-cell-width-height) * -0.25)`,
+                      right: `calc(var(--crafting-table-cell-width-height) * -0.07)`,
                       margin: "0.5rem", // Add some spacing from the edge
                     }}
                   >
