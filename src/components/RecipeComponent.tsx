@@ -58,10 +58,20 @@ const RecipeComponent = ({
             />
           </div>
           <div className="arrow">&#10132;</div>
-          <div id="result">
+          <div
+            style={{
+              width: craftingTableResultWidthHeight
+                ? craftingTableResultWidthHeight
+                : `var(--crafting-table-result-width-height)`,
+              height: craftingTableResultWidthHeight
+                ? craftingTableResultWidthHeight
+                : `var(--crafting-table-result-width-height)`,
+            }}
+            id="result"
+          >
             {recipe && foundItem && (
               <>
-                <div className="result-box ">
+                <div /* put style here */ className="result-box ">
                   <Tooltip hasArrow label={recipe.item}>
                     <Image
                       className={

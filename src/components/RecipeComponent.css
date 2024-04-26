@@ -34,8 +34,8 @@
   border-left: thick double #373737;
   border-right: double #FFFFFF;
   border-bottom: double #FFFFFF;
-  width: 3.2em;
-  height: 3.2em;
+  width: var(--crafting-table-result-width-height);
+  height: var(--crafting-table-result-width-height);
 }
 #crafting-lbl{
   font-size: 1.7em;
