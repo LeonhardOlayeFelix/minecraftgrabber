@@ -1,6 +1,0 @@
-.center {
-    display: flex; /* Flexbox display */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content (if needed) */
-    width: 100%; /* Take full width to center within it */
-  }
