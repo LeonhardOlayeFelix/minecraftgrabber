@@ -40,7 +40,7 @@ const App = () => {
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
-        craftingTableCellWidthHeight={"2.3em"}
+        craftingTableCellWidthHeight={"2.1em"}
         className="m-3"
       />
       <CraftingRecipeComponent
@@ -48,7 +48,7 @@ const App = () => {
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
-        craftingTableCellWidthHeight={"2.3em"}
+        craftingTableCellWidthHeight={"3em"}
         className="m-3"
       />
     </div>

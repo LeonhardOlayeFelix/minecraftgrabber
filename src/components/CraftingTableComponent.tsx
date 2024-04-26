@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableGridElementComponent from "./CraftingTableGridElementComponent";
 import "./CraftingTableComponent.css";
+import { Tooltip } from "@chakra-ui/react";
 interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];

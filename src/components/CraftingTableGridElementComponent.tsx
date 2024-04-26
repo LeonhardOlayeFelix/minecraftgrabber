@@ -1,6 +1,6 @@
 import "./CraftingTableGridElementComponent.css";
 import { ItemsProps } from "../hooks/useMinecraftHook";
-import { Image } from "@chakra-ui/react";
+import { Image, Tooltip } from "@chakra-ui/react";
 interface Props {
   item: ItemsProps;
   className?: string;
@@ -27,16 +27,18 @@ const CraftingTableGridElementComponent = ({
       className={"grid-element " + className}
     >
       {item && (
-        <Image
-          className={"displayed " + gridElementAnimation}
-          src={item.image}
-          alt={item.namespacedId || "..."}
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title={item.name || "..."}
-          data-bs-delay={100}
-          style={{ cursor: "pointer" }}
-        />
+        <Tooltip label={item.name}>
+          <Image
+            className={"displayed " + gridElementAnimation}
+            src={item.image}
+            alt={item.namespacedId || "..."}
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title={item.name || "..."}
+            data-bs-delay={100}
+            style={{ cursor: "pointer" }}
+          />
+        </Tooltip>
       )}
     </div>
   );
