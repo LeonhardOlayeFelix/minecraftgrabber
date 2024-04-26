@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableComponent from "./CraftingTableComponent";
 import "./RecipeComponent.css";
-import { Box, Text, Image, Tooltip } from "@chakra-ui/react";
+import { Box, Text, Image, Tooltip, Center } from "@chakra-ui/react";
 interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
@@ -68,7 +68,24 @@ const RecipeComponent = ({
               craftingTableCellWidthHeight={craftingTableCellWidthHeight}
             />
           </div>
-          <div className="arrow">&#10132;</div>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"center"}
+            className="arrow"
+            alignItems={"center"}
+          >
+            <Text
+              marginTop={4}
+              fontSize={
+                craftingTableCellWidthHeight
+                  ? `calc(${craftingTableCellWidthHeight} * 0.3)`
+                  : `calc(var(--crafting-table-cell-width-height) * 0.3)`
+              }
+            >
+              &#10132;
+            </Text>
+          </Box>
           <div
             style={{
               width: craftingTableCellWidthHeight

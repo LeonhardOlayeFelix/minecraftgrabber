@@ -36,18 +36,25 @@ const App = () => {
   return (
     <div className="d-flex justify-content-start flex-wrap">
       <CraftingRecipeComponent
-        recipes={recipe1}
+        recipes={recipe3}
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
         craftingTableCellWidthHeight={"2.1em"}
       />
       <CraftingRecipeComponent
-        recipes={recipe1}
+        recipes={recipe3}
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
         craftingTableCellWidthHeight={"3em"}
+      />
+      <CraftingRecipeComponent
+        recipes={recipe3}
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+        craftingTableCellWidthHeight={"6em"}
       />
     </div>
   );
