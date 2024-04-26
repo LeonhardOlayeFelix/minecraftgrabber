@@ -42,6 +42,7 @@ const App = () => {
         items={items}
         craftingTableCellWidthHeight={"2.3em"}
         craftingTableResultWidthHeight={"3.2em"}
+        className="m-3"
       />
       <CraftingRecipeComponent
         recipes={recipe1}
@@ -50,6 +51,7 @@ const App = () => {
         items={items}
         craftingTableCellWidthHeight={"2.3em"}
         craftingTableResultWidthHeight={"3.2em"}
+        className="m-3"
       />
     </div>
   );
