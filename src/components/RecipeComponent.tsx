@@ -5,6 +5,7 @@ import "./RecipeComponent.css";
 import { Box, Text, Image, Tooltip, Center } from "@chakra-ui/react";
 interface Props {
   recipe: RecipeProps;
+  display?: string;
   items: ItemsProps[];
   className?: string;
   gridElementAnimation?: string;
@@ -19,6 +20,7 @@ const RecipeComponent = ({
   gridElementAnimation,
   gridResultAnimation,
   craftingTableCellWidthHeight,
+  display,
 }: Props) => {
   const [recipeIsLoading, setRecipeIsLoading] = useState(true);
   const handleOnLoad = () => {
@@ -46,7 +48,7 @@ const RecipeComponent = ({
                 fontFamily={"Roboto Remix"}
                 lineHeight={3}
               >
-                {recipe.item}{" "}
+                {display ? display : recipe.item}
               </Text>
             </Box>
           )}

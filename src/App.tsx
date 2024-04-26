@@ -4,6 +4,7 @@ import "./index.css";
 import ItemSearchComponent from "./components/ItemSearchComponent";
 import CraftingTableComponent from "./components/CraftingTableComponent";
 import CraftingRecipeComponent from "./components/CraftingRecipeComponent";
+import { Flex } from "@chakra-ui/react";
 
 //This is enough for the items.
 
@@ -26,24 +27,28 @@ const App = () => {
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "Oak Planks"
+    (recipe) => recipe.item === "Diamond Sword"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
-    (recipe) => recipe.item === "Oak Planks"
+    (recipe) => recipe.item === "Beacon"
+  ) as RecipeProps[];
+
+  const recipe4 = recipes.filter(
+    (recipe) => recipe.item === "Wooden Sword"
   ) as RecipeProps[];
 
   return (
-    <div className="d-flex justify-content-start flex-wrap">
+    <Flex display={"flex"} justifyContent="start" wrap={"wrap"} gap={5}>
       <CraftingRecipeComponent
-        recipes={recipe3}
+        recipes={recipe1}
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
         craftingTableCellWidthHeight={"2.2em"}
       />
       <CraftingRecipeComponent
-        recipes={recipe3}
+        recipes={recipe2}
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
@@ -57,13 +62,13 @@ const App = () => {
         craftingTableCellWidthHeight={"4em"}
       />
       <CraftingRecipeComponent
-        recipes={recipe3}
+        recipes={recipe4}
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
         craftingTableCellWidthHeight={"6em"}
       />
-    </div>
+    </Flex>
   );
 };
 

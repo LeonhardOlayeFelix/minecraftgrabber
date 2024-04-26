@@ -65,6 +65,10 @@ const CraftingRecipeComponent = ({
                     gridResultAnimation={gridResultAnimation}
                     items={items}
                     craftingTableCellWidthHeight={craftingTableCellWidthHeight}
+                    display={
+                      recipe.item +
+                      (recipes.length > 1 ? ": (" + index + ")" : "")
+                    }
                   />
                 </div>
               ))}
