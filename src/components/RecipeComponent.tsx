@@ -26,6 +26,10 @@ const RecipeComponent = ({
   const handleOnLoad = () => {
     setRecipeIsLoading(false);
   };
+  let foundItem = undefined;
+  if (recipe) {
+    foundItem = items.find((item) => item.name === recipe.item);
+  }
   return (
     <div id="outer" className={className}>
       <div className={"screen"}>
@@ -55,19 +59,14 @@ const RecipeComponent = ({
           </div>
           <div className="arrow">&#10132;</div>
           <div id="result">
-            {recipe && items.find((item) => item.name === recipe.item) && (
+            {recipe && foundItem && (
               <>
                 {recipe.quantity == 1 && (
                   <div className="result-box ">
                     <img
                       className={"result-displayed " + gridResultAnimation}
-                      src={
-                        items.find((item) => item.name === recipe.item)?.image
-                      }
-                      alt={
-                        items.find((item) => item.name === recipe.item)
-                          ?.namespacedId || "Image"
-                      }
+                      src={foundItem?.image}
+                      alt={foundItem?.namespacedId || "Image"}
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       title={recipe.item || "click for more!"}
@@ -81,13 +80,8 @@ const RecipeComponent = ({
                   <div className="result-box">
                     <img
                       className={"result-displayed-1 " + gridResultAnimation}
-                      src={
-                        items.find((item) => item.name === recipe.item)?.image
-                      }
-                      alt={
-                        items.find((item) => item.name === recipe.item)
-                          ?.namespacedId || "Image"
-                      }
+                      src={foundItem?.image}
+                      alt={foundItem?.namespacedId || "Image"}
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       title={recipe.item || "click for more!"}
