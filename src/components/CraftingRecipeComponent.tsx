@@ -9,6 +9,7 @@ interface Props {
   className?: string;
   gridElementAnimation?: string;
   gridResultAnimation?: string;
+  craftingTableCellWidthHeight?: string;
 }
 //will show a list of recipe in a slide show format
 const CraftingRecipeComponent = ({
@@ -17,6 +18,7 @@ const CraftingRecipeComponent = ({
   className,
   gridElementAnimation,
   gridResultAnimation,
+  craftingTableCellWidthHeight,
 }: Props) => {
   const carouselId = useId();
   return (
@@ -39,6 +41,7 @@ const CraftingRecipeComponent = ({
                   gridElementAnimation={gridElementAnimation}
                   gridResultAnimation={gridResultAnimation}
                   items={items}
+                  craftingTableCellWidthHeight={craftingTableCellWidthHeight}
                 />
               </div>
             ))}
@@ -48,6 +51,7 @@ const CraftingRecipeComponent = ({
                 gridElementAnimation={gridElementAnimation}
                 gridResultAnimation={gridResultAnimation}
                 items={items}
+                craftingTableCellWidthHeight={craftingTableCellWidthHeight}
               />
             )}
           </div>

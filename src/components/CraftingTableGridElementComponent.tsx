@@ -1,21 +1,33 @@
 import "./CraftingTableGridElementComponent.css";
 import { ItemsProps } from "../hooks/useMinecraftHook";
-
+import { Image } from "@chakra-ui/react";
 interface Props {
   item: ItemsProps;
   className?: string;
   gridElementAnimation?: string;
+  craftingTableCellWidthHeight?: string;
 }
 
 const CraftingTableGridElementComponent = ({
   item,
   className,
   gridElementAnimation,
+  craftingTableCellWidthHeight,
 }: Props) => {
   return (
-    <div className={"grid-element " + className}>
+    <div
+      style={{
+        width: craftingTableCellWidthHeight
+          ? craftingTableCellWidthHeight
+          : "var(--crafting-table-cell-width-height)",
+        height: craftingTableCellWidthHeight
+          ? craftingTableCellWidthHeight
+          : "var(--crafting-table-cell-width-height)",
+      }}
+      className={"grid-element " + className}
+    >
       {item && (
-        <img
+        <Image
           className={"displayed " + gridElementAnimation}
           src={item.image}
           alt={item.namespacedId || "..."}

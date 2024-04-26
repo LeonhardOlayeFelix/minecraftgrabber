@@ -1,17 +1,4 @@
 #grid {
-  width: 8.7em;
+  /* width: 8.7em; */
   float: left;
-}
-.grid-element {
-  background-color: #8b8b8b;
-  border-top: thick double #373737;
-  border-left: thick double #373737;
-  border-right: double #FFFFFF;
-  border-bottom: double #FFFFFF;
-  width: 2.7em;
-  height: 2.7em;
-  float: left;
-  display: flex;  /* Use flexbox */
-  justify-content: center;  /* Center horizontally */
-  align-items: center;  /* Center vertically */
 }

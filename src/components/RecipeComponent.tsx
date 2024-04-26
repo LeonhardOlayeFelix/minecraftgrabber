@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableComponent from "./CraftingTableComponent";
 import "./RecipeComponent.css";
+import { Box, Text } from "@chakra-ui/react";
 interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
   className?: string;
   gridElementAnimation?: string;
   gridResultAnimation?: string;
+  craftingTableCellWidthHeight?: string;
 }
 
 const RecipeComponent = ({
@@ -16,6 +18,7 @@ const RecipeComponent = ({
   className,
   gridElementAnimation,
   gridResultAnimation,
+  craftingTableCellWidthHeight,
 }: Props) => {
   const [recipeIsLoading, setRecipeIsLoading] = useState(true);
   const handleOnLoad = () => {
@@ -25,7 +28,11 @@ const RecipeComponent = ({
     <div id="outer" className={className}>
       <div className={"screen"}>
         <div id="crafting-div">
-          <div>{recipe && <p id="crafting-lbl">{recipe.item} </p>}</div>
+          {recipe && (
+            <Box>
+              <Text id="crafting-lbl">{recipe.item} </Text>
+            </Box>
+          )}
           {recipeIsLoading && (
             <div
               className="spinner-border spinner-border-sm"
@@ -41,6 +48,7 @@ const RecipeComponent = ({
               recipe={recipe}
               items={items}
               onLoad={handleOnLoad}
+              craftingTableCellWidthHeight={craftingTableCellWidthHeight}
             />
           </div>
           <div className="arrow">&#10132;</div>

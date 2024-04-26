@@ -26,11 +26,11 @@ const App = () => {
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "White Dye"
+    (recipe) => recipe.item === "Oak Planks"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
-    (recipe) => recipe.item === "Diamond Shovel"
+    (recipe) => recipe.item === "Oak Planks"
   ) as RecipeProps[];
 
   return (
@@ -40,6 +40,7 @@ const App = () => {
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
+        craftingTableCellWidthHeight={"2.3em"}
       />
     </div>
   );
