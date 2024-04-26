@@ -3,7 +3,8 @@
   src: url('../assets/fonts/roboto-remix-font/Minecraftchmc-dBlX.ttf') format('truetype');
 }
 #crafting-outer-div{
-width: var(--crafting-table-width);
+/* width: var(--crafting-table-width); */
+
 }
 .carousel-item {
     overflow: hidden;

@@ -10,7 +10,6 @@ interface Props {
   gridElementAnimation?: string;
   gridResultAnimation?: string;
   craftingTableCellWidthHeight?: string;
-  craftingTableResultWidthHeight?: string;
 }
 
 const RecipeComponent = ({
@@ -20,7 +19,6 @@ const RecipeComponent = ({
   gridElementAnimation,
   gridResultAnimation,
   craftingTableCellWidthHeight,
-  craftingTableResultWidthHeight,
 }: Props) => {
   const [recipeIsLoading, setRecipeIsLoading] = useState(true);
   const handleOnLoad = () => {
@@ -60,18 +58,18 @@ const RecipeComponent = ({
           <div className="arrow">&#10132;</div>
           <div
             style={{
-              width: craftingTableResultWidthHeight
-                ? craftingTableResultWidthHeight
-                : `var(--crafting-table-result-width-height)`,
-              height: craftingTableResultWidthHeight
-                ? craftingTableResultWidthHeight
-                : `var(--crafting-table-result-width-height)`,
+              width: craftingTableCellWidthHeight
+                ? `calc(${craftingTableCellWidthHeight} * 1.3)`
+                : `calc(var(--crafting-table-cell-width-height) * 1.3)`,
+              height: craftingTableCellWidthHeight
+                ? `calc(${craftingTableCellWidthHeight} * 1.3)`
+                : `calc(var(--crafting-table-cell-width-height) * 1.3)`,
             }}
             id="result"
           >
             {recipe && foundItem && (
               <>
-                <div /* put style here */ className="result-box ">
+                <div className="result-box ">
                   <Tooltip hasArrow label={recipe.item}>
                     <Image
                       className={
