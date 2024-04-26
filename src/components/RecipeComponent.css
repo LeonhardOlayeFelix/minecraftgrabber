@@ -36,9 +36,6 @@
   width: var(--crafting-table-result-width-height);
   height: var(--crafting-table-result-width-height);
 }
-#crafting-lbl{
-  
-}
 .crafting-area{
   display: flex;
   justify-content: space-between;
