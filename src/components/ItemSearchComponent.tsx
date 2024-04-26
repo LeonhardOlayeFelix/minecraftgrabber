@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./ItemSearchComponent.css";
 import Form from "./Form";
 import { ItemsProps } from "../hooks/useMinecraftHook";
-import ItemGridComponent from "./ItemGridComponent";
 import "./ItemSearchComponent.css";
 
 interface Props {
@@ -14,12 +13,7 @@ interface Props {
 const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
   const [matchedItems, setMatchedItems] = useState<ItemsProps[]>([...items]);
   const handleOnSearch = (name: string) => {
-    const filteredSortedItems = [...items]
-      .sort((a, b) => a.name.length - b.name.length)
-      .filter((itemToCheck) =>
-        itemToCheck.name.toLowerCase().includes(name.toLowerCase())
-      );
-    setMatchedItems(filteredSortedItems);
+    const searchResults = []; //This should contain the list of items that match the search
   };
 
   return (
@@ -38,11 +32,12 @@ const ItemSearchComponent = ({ items, className, maxResults }: Props) => {
       </div>
       <div>
         {matchedItems && maxResults && (
-          <ItemGridComponent
-            animation="grow-1"
-            key={new Date().toISOString()}
-            items={matchedItems.slice(0, maxResults)}
-          />
+          // <ItemGridComponent
+          //   animation="grow-1"
+          //   key={new Date().toISOString()}
+          //   items={matchedItems.slice(0, maxResults)}
+          // /> replace this with masonrygrid
+          <div></div>
         )}
       </div>
       <div className="m-3">
