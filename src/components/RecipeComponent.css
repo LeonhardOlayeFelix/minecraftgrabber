@@ -72,10 +72,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
-.result-box{
-  display: flex;
-  height: 100%;
-}
+
 
 .crafting-spinner{
   width: 1em;

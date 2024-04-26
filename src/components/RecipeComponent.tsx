@@ -99,7 +99,13 @@ const RecipeComponent = ({
           >
             {recipe && foundItem && (
               <>
-                <div className="result-box ">
+                <Box
+                  alignItems={"center"}
+                  alignContent={"center"}
+                  height={"100%"}
+                  width={"100%"}
+                  position={"relative"}
+                >
                   <Tooltip hasArrow label={recipe.item}>
                     <Image
                       className={
@@ -116,10 +122,18 @@ const RecipeComponent = ({
                       key={recipe.item}
                     />
                   </Tooltip>
-                  <p className="quantity grow-1">
+                  <p
+                    className="quantity"
+                    style={{
+                      position: "absolute", // Position the <p> element absolutely
+                      bottom: `calc(var(--crafting-table-cell-width-height) * -0.3)`,
+                      right: `calc(var(--crafting-table-cell-width-height) * -0.1)`,
+                      margin: "0.5rem", // Add some spacing from the edge
+                    }}
+                  >
                     {recipe.quantity == 1 ? "" : recipe.quantity}
                   </p>
-                </div>
+                </Box>
               </>
             )}
           </div>

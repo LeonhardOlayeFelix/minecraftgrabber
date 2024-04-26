@@ -40,7 +40,7 @@ const App = () => {
         gridElementAnimation="grow-1"
         gridResultAnimation="grow-1"
         items={items}
-        craftingTableCellWidthHeight={"2.1em"}
+        craftingTableCellWidthHeight={"2.2em"}
       />
       <CraftingRecipeComponent
         recipes={recipe3}
@@ -48,6 +48,13 @@ const App = () => {
         gridResultAnimation="grow-1"
         items={items}
         craftingTableCellWidthHeight={"3em"}
+      />
+      <CraftingRecipeComponent
+        recipes={recipe3}
+        gridElementAnimation="grow-1"
+        gridResultAnimation="grow-1"
+        items={items}
+        craftingTableCellWidthHeight={"4em"}
       />
       <CraftingRecipeComponent
         recipes={recipe3}
