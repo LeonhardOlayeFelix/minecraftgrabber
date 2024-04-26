@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ItemsProps, RecipeProps } from "../hooks/useMinecraftHook";
 import CraftingTableComponent from "./CraftingTableComponent";
 import "./RecipeComponent.css";
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Tooltip } from "@chakra-ui/react";
 interface Props {
   recipe: RecipeProps;
   items: ItemsProps[];
@@ -62,20 +62,22 @@ const RecipeComponent = ({
             {recipe && foundItem && (
               <>
                 <div className="result-box ">
-                  <Image
-                    className={
-                      "result-displayed" +
-                      (recipe.quantity == 1 ? " " : "-1 ") +
-                      gridResultAnimation
-                    }
-                    src={foundItem?.image}
-                    alt={foundItem?.namespacedId || "Image"}
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title={recipe.item || "click for more!"}
-                    style={{ cursor: "pointer" }}
-                    key={recipe.item}
-                  />
+                  <Tooltip hasArrow label={recipe.item}>
+                    <Image
+                      className={
+                        "result-displayed" +
+                        (recipe.quantity == 1 ? " " : "-1 ") +
+                        gridResultAnimation
+                      }
+                      src={foundItem?.image}
+                      alt={foundItem?.namespacedId || "Image"}
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title={recipe.item || "click for more!"}
+                      style={{ cursor: "pointer" }}
+                      key={recipe.item}
+                    />
+                  </Tooltip>
                   <p className="quantity grow-1">
                     {recipe.quantity == 1 ? "" : recipe.quantity}
                   </p>
