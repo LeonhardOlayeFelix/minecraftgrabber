@@ -23,7 +23,7 @@ const CraftingRecipeComponent = ({
 }: Props) => {
   const carouselId = useId();
   return (
-    <Flex flexDirection={"row"} alignItems={"center"}>
+    <Flex flexDirection={"row"} alignItems={"center"} className={className}>
       <Box>
         {recipes.length > 1 && (
           <button
@@ -45,7 +45,6 @@ const CraftingRecipeComponent = ({
             : `calc(var(--crafting-table-cell-width-height) * 6.1)`,
         }}
         id="carousel-container"
-        className={className}
       >
         <div id="crafting-outer-div">
           <div

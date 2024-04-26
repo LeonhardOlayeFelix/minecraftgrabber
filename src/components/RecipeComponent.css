@@ -37,8 +37,7 @@
   height: var(--crafting-table-result-width-height);
 }
 #crafting-lbl{
-  font-size: 1.7em;
-  font-family: 'Roboto Remix', sans-serif;
+  
 }
 .crafting-area{
   display: flex;

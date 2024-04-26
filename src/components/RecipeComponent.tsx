@@ -28,13 +28,27 @@ const RecipeComponent = ({
   if (recipe) {
     foundItem = items.find((item) => item.name === recipe.item);
   }
+
   return (
     <div id="outer" className={className}>
       <div className={"screen"}>
-        <div id="crafting-div">
+        <Box
+          width={"100%"}
+          marginTop={1}
+          height={"1.1em"}
+          display={"flex"}
+          justifyContent={"start"}
+        >
           {recipe && (
             <Box>
-              <Text id="crafting-lbl">{recipe.item} </Text>
+              <Text
+                id="crafting-lbl"
+                fontSize={"1.7em"}
+                fontFamily={"Roboto Remix"}
+                lineHeight={3}
+              >
+                {recipe.item}{" "}
+              </Text>
             </Box>
           )}
           {recipeIsLoading && (
@@ -44,7 +58,7 @@ const RecipeComponent = ({
               role="status"
             ></div>
           )}
-        </div>
+        </Box>
         <div className="crafting-area">
           <div>
             <CraftingTableComponent
