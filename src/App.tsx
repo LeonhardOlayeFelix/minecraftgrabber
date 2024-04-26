@@ -27,7 +27,7 @@ const App = () => {
   ) as RecipeProps[];
 
   const recipe2 = recipes.filter(
-    (recipe) => recipe.item === "Diamond Sword"
+    (recipe) => recipe.item === "Torch"
   ) as RecipeProps[];
 
   const recipe3 = recipes.filter(
